@@ -1,6 +1,6 @@
 const mongoose = require ('mongoose');
 
-const OrdertSchema = new mongoose.Schema({
+const OrderSchema = new mongoose.Schema({
     userId: {
         type: String, 
         required: true
@@ -32,4 +32,4 @@ const OrdertSchema = new mongoose.Schema({
 {timestamps: true}
 )
 
-module.exports = mongoose.model('Order',OrderSchema);
+module.exports = mongoose.model('Order', OrderSchema);

@@ -1,5 +1,4 @@
 const joi = require ('@hapi/joi');
-const { object } = require('joi');
 
 
 
@@ -18,4 +17,4 @@ const productValidation = data => {
     })
 }
 
-module.exports =   productValidation;
+module.exports . productValidation =   productValidation;
