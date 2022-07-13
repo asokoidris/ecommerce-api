@@ -6,7 +6,7 @@ let mongoUrl = null;
 
 const mongoConnection = () => {
     if (process.env.NODE_ENV === 'development') {
-        mongoUrl = 'mongodb+srv://akinade:xVWhvQp9HUfrDFkP@cluster0.alh61.mongodb.net/ecommerce-api?retryWrites=true&w=majority' ;
+        mongoUrl ='mongodb://localhost:27017/ecommerce-api'
     } else {
         mongoUrl = TEST_DB;
     }

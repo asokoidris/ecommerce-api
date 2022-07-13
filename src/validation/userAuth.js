@@ -42,5 +42,6 @@ const loginValidation = data => {
 
 }
 
-module.exports.registerValidation = registerValidation
-module.exports.loginValidation = loginValidation
+const validate = {registerValidation,loginValidation }
+
+module.exports = validate;

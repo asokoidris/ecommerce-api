@@ -2,6 +2,8 @@ const express = require('express');
 const app = express()
 const bodyParser = require('body-parser');
 
+
+
 const userAuthRoute = require('../routes/userAuth')
 const userRoute = require('../routes/users')
 const productRoute = require('../routes/product')
@@ -11,7 +13,6 @@ const cartRoute = require ('../routes/carts')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
-
 
 
 
