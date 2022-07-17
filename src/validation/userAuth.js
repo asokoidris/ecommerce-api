@@ -8,16 +8,20 @@ const registerValidation = data => {
     const schema = joi.object({
         username: joi.string()
         .min(6)
-        .require(),
+        .required()
+        .unique(),
 
         email:  joi.string()
                 .email()
-               .require(),
+               .required()
+               .unique(),
          password: joi.string()
                   .min(6)
-                  .require(),
+                  .required()
+                  .unique(),
 
-           isAdmin: joi.boolean()       
+           isAdmin: joi.boolean()
+                      .default(),      
                 
     });
     return schema.validate(data);
@@ -32,16 +36,19 @@ const registerValidation = data => {
 const loginValidation = data => { 
     const schema = joi.object({
         username : joi.string()
-                   .min(6)
-                   .require(),
-        password: joi.string()
-                     .min(6)   
-                     .require()        
+                .required(),
+                
+         email: joi.string()
+              .required(),
+
+        password: joi.string()   
+                     .required(),
+            
     });
     return schema.validate(data)
 
 }
 
-const validate = {registerValidation,loginValidation }
+module.exports.registerValidation = registerValidation
 
-module.exports = validate;
+module.exports.loginValidation = loginValidation 

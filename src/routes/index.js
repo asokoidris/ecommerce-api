@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express()
 const bodyParser = require('body-parser');
+const helmet = require ('helmet');
+const cors = require ('cors');
 
 
 
@@ -13,6 +15,8 @@ const cartRoute = require ('../routes/carts')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(helmet())
+app.use(helmet())
 
 
 
