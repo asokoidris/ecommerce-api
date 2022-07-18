@@ -1,13 +1,49 @@
-const successResponse = (res, status, message, data) => {
-    const response = { status: true, message, data }
-    return res.json(response);
+const loginSuccessResponse = (res, statusCode, token, message, data) => {
+  const response = {
+      meta: { statusCode, token, message },
+      error: false,
+      data,
+  }
+  return res.status(statusCode).json(response)
+}
 
-};
+/**
+* The success response function
+* @param {Object} res - Express response object
+* @param {Number} statusCode - HTTP status code
+* @param {String} message - Message to be displayed
+* @param {Object} data - Data to be returned
+*/
+const successResponse = (res, statusCode, message, data) => {
+  const response = {
+      meta: { statusCode, message },
+      error: false,
+      data,
+  }
+  return res.status(statusCode).json(response)
+}
 
-const errorResponse = (res, status, message) => {
-    const response = { status: false, message }
-    return res.json(response);
+const paginationSuccessResponse = (res, statusCode, message, data, paginationMeta) => {
+  const response = {
+      meta: { statusCode, message, ...paginationMeta },
+      error: false,
+      data,
+  }
+  return res.status(statusCode).json(response)
+}
 
-};
+const errorResponse = (res, statusCode, message, errors = [], errorCode) => {
+  const response = {
+      meta: { statusCode, message },
+      error: true,
+      errors: errors,
+  }
+  return res.status(statusCode).json(response)
+}
 
-module.exports = { successResponse, errorResponse };
+module.exports = {
+  successResponse,
+  loginSuccessResponse,
+  errorResponse,
+  paginationSuccessResponse,
+}

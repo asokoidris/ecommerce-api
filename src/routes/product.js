@@ -2,7 +2,7 @@ const express = require ('express')
 const router = express.Router()
 const ProductController = require ('../controller/product'); 
 const {verifyToken, verifyTokenAndAuthorization, 
-    verifyTokenAndAdmin} = require('../ulits/jwt');
+    verifyTokenAndAdmin} = require('../middleware/jwt');
 
 
 // CREATE PRRODUCT

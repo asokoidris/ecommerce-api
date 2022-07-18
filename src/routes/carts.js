@@ -2,7 +2,7 @@ const express = require ('express')
 const router = express.Router()
 const ControllerCart = require ('../controller/cart')
 const {verifyToken, verifyTokenAndAuthorization,
-     verifyTokenAndAdmin} = require('../ulits/jwt');
+     verifyTokenAndAdmin} = require('../middleware/jwt');
 
 
 // CREATE cart

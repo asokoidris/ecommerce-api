@@ -1,7 +1,7 @@
 const express = require('express');
 const {verifyToken, verifyTokenAndAuthorization,
     
-    verifyTokenAndAdmin} = require('../ulits/jwt')
+    verifyTokenAndAdmin} = require('../middleware/jwt')
 const router = express.Router();
 const controllerUser = require('../controller/users')
 

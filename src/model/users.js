@@ -17,11 +17,11 @@ const UserSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    isAdmin: {
-        type: Boolean,
-        default: false,
+    phoneNumber:{
+        type: Number,
+        required: true
     },
-
+   
 },
     { timestamps: true }
 )
