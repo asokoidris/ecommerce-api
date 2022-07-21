@@ -1,6 +1,5 @@
 const express = require('express');
-// const { registerValidation, loginValidation }
-    // = require('../validation/userAuth')
+
 
 const UserAuthController
     = require('../controller/userAuth')
@@ -10,15 +9,14 @@ const router = express.Router();
 
 
 router.post('/register',
-    UserAuthController.userRegController
+    UserAuthController.userSignUp
 )
 
 
 
-// router.post('/login',
-// loginValidation,
-//  UserAuthController.ControllerLogin
-// )
+router.post('/login',
+ UserAuthController.userSignIn
+)
 
 
 module.exports = router;

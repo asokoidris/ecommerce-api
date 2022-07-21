@@ -1,5 +1,6 @@
-const UserAuthService = require ('../service/userAuth')
-// const { successResponse, errorResponse } = require('../utils/response');
+const jwt = require ('jsonwebtoken')
+const bcrypt = require('bcryptjs');
+const User = require('../model/users')
 
 /**
  * @description Authentication Controller
@@ -12,48 +13,47 @@ const UserAuthService = require ('../service/userAuth')
      * @param {Object} res - HTTP Response
      * @return {Object} Returned object
      */
-static async userRegController(req, res) {
+static async userSignUp(req, res) {
     try{
-        const result = await  UserAuthService.userRegistration(req.body)
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
-        if (result.statusCode === 409) {
-          res.status(409).json(err)
-        }
-      res.status(200).json(result)
+      const newUser = await new User({
+          username: req.body.username,
+          email: req.body.email,
+          phoneNumber: req.body.phoneNumber,
+          password: hashedPassword,
+      });
+      const savedUser = await newUser.save();
+      res.status(200).json(savedUser)
     }
  catch (error) {
   res.status(500).json(error.message)
 }
 
  }
- }
+ 
 
-// exports.ControllerLogin =  async (req, res) => {
-//     try {
-//         const user = await User.findOne({ username: req.body.username })
-//         !user && res.status(401).json('Wrong credential');
-//         const hashedPassword = CryptoJS.AES.decrypt(
-//             user.password,
-//             process.env.PASS_SEC
-//         );
-//         const Originalpassword = hashedPassword.toString(CryptoJS.enc.Utf8);
-//         Originalpassword !== req.body.password &&
-//             res.status(401).json('Wrong credential');
-//         const accessToken = jwt.sign({
-//             id: user._id,
-//             isAdmin: user.isAdmin
-//         },
-//             process.env.JWT_SEC,
-//             { expiresIn: "5d" }
-//         )
+static async userSignIn(req, res)  {
+    try {
+        const user = await User.findOne({email:req.body.email});
+        !user && res.status(404).json('user not found');
 
-//         const { password, ...others } = user._doc;
+        const validPassword = await bcrypt.compare(req.body.password, user.password);
+        !validPassword && res.status(404).json('Wrong password');
+        const accessToken = jwt.sign({
+            id: user._id
+        },
+            process.env.JWT_SEC,
+           process.env.EXP_SEC
+        );
 
-//         res.status(200).json({ ...others, accessToken })
-//     } catch (err) {
-//         res.status(500).json(err)
-//     }
+        const {password,updateAt, ...others} = user._doc;
 
-
-// }
+        res.status(200).json({...others, accessToken})
+    } catch (error) {
+        res.status(500).json(error.message)
+    }
+}
+}
 module.exports = UserAuthController;

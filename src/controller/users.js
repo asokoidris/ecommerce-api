@@ -1,27 +1,37 @@
 
 const User = require('../model/users')
-const CryptoJS = require('crypto-js')
+const bcrypt = require ('bcryptjs')
 
 
-exports.updateUser =  async (req, res) => {
-    if (req.body.password) {
-        req.body.password = CryptoJS.AES.encrypt(
-            req.body.password,
-            process.env.PASS_SEC
-        ).toString();
-    }
-    try {
+
+/**
+ * @description User Controller
+ */
+
+ class UserController {
+    /**
+     * @description return a JSON data
+     * @param {Object} req - HTTP Request
+     * @param {Object} res - HTTP Response
+     * @return {Object} Returned object
+     */
+
+// UPDATE USER
+
+static async updateUser (req, res)  {
+        try {
         const updatedUser = await User.findByIdAndUpdate(req.params.id, {
             $set: req.body
         }, { new: true }
         );
         res.status(200).json(updatedUser)
-    } catch (err) {
+    } catch (error) {
         res.status(500).json(err)
     }
 }
 
-exports.deleteUser =  async (req, res) => {
+
+static async DeleteUser(req, res) {
     try {
         await User.findByIdAndDelete(req.params.id)
         res.status(200).json('User has been deleted....')
@@ -31,7 +41,7 @@ exports.deleteUser =  async (req, res) => {
     }
 }
 
-exports.getUser = async (req, res) => {
+static async GetUser(req, res) {
     try {
         const user = await User.findById(req.params.id)
         const { password, ...others } = user._doc;
@@ -42,7 +52,7 @@ exports.getUser = async (req, res) => {
     }
 }
 
-exports.getAllUser = async (req, res) => {
+static async GetAllUsers (req, res) {
     const query = req.query.new;
     try {
         const users = query
@@ -54,7 +64,7 @@ exports.getAllUser = async (req, res) => {
     }
 }
 
-exports.userStats =  async (req, res) => {
+static async UserStats(req, res) {
     const date = new Date();
     const lastYear = new Date(date.setFullYear(date.getFullYear() - 1));
 
@@ -78,3 +88,7 @@ exports.userStats =  async (req, res) => {
         res.status(500).json(err)
     }
 }
+    }
+
+
+ module.exports = UserController;

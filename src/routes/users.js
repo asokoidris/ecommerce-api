@@ -3,7 +3,7 @@ const {verifyToken, verifyTokenAndAuthorization,
     
     verifyTokenAndAdmin} = require('../middleware/jwt')
 const router = express.Router();
-const controllerUser = require('../controller/users')
+const UserController = require('../controller/users')
 
  
 
@@ -12,7 +12,7 @@ const controllerUser = require('../controller/users')
 
 router.put('/:id',
  verifyTokenAndAuthorization,
- controllerUser.updateUser
+ UserController.updateUser
  )
 
 // DELETE USER
@@ -20,7 +20,7 @@ router.put('/:id',
 
 router.delete('/:id', 
 verifyTokenAndAuthorization,
-controllerUser.deleteUser
+UserController.DeleteUser
 )
 
 
@@ -28,7 +28,7 @@ controllerUser.deleteUser
 
 router.get('/find/:id',
  verifyTokenAndAdmin,
-controllerUser.getUser
+ UserController. GetUser
  )
 
 
@@ -36,14 +36,14 @@ controllerUser.getUser
 
 router.get('/', 
 verifyTokenAndAdmin,
-controllerUser.getAllUser,
+UserController.GetAllUsers,
 )
 
 
 // USER STATS
 router.get('/stats',
  verifyTokenAndAdmin,
- controllerUser.userStats
+ UserController.UserStats
  )
 
 

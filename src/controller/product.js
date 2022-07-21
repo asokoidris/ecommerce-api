@@ -1,7 +1,22 @@
 const Product = require ('../model/products');
 
 
-exports.CreateProduct = async (req, res) => {
+
+
+/**
+ * @description Product Controller
+ */
+
+ class ProductController {
+    /**
+     * @description return a JSON data
+     * @param {Object} req - HTTP Request
+     * @param {Object} res - HTTP Response
+     * @return {Object} Returned object
+     */
+
+
+static async CreateProduct(req, res) {
     const newProduct = new Product(req.body);
 
     try{
@@ -13,7 +28,7 @@ exports.CreateProduct = async (req, res) => {
 }
 
 
-exports.UpdateProduct = async (req, res) => {
+static async UpdateProduct (req, res) {
 
     try {
         const updatedProduct = await Product.findByIdAndUpdate(req.params.id, {
@@ -27,7 +42,7 @@ exports.UpdateProduct = async (req, res) => {
 }
 
 
-exports.DeleteProduct = async (req, res) => {
+static async DeleteProduct (req, res) {
     try {
         await Product.findByIdAndDelete(req.params.id)
         res.status(200).json('Product has been deleted....')
@@ -38,7 +53,7 @@ exports.DeleteProduct = async (req, res) => {
 }
 
 
-exports.GetProduct = async (req, res) => {
+static async GetProduct (req, res) {
 
     try {
         const product = await Product.findById(req.params.id)
@@ -49,7 +64,7 @@ exports.GetProduct = async (req, res) => {
 }
 
 
-exports.GetAllProducts = async (req, res) => {
+static async GetAllProducts (req, res) {
     const qNew = req.query.new;
      const qCat = req.body.category;
     try {
@@ -69,4 +84,9 @@ exports.GetAllProducts = async (req, res) => {
     } catch (error) {
         res.status(500).json(error.message)
     }
+
 }
+ }
+
+
+module.exports = ProductController ;

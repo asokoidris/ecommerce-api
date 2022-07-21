@@ -2,7 +2,22 @@ const Order = require ('../model/order');
 
 
 
-exports.CreateOrder =  async (req, res) => {
+/**
+ * @description Order Controller
+ */
+
+ class OrderController {
+    /**
+     * @description return a JSON data
+     * @param {Object} req - HTTP Request
+     * @param {Object} res - HTTP Response
+     * @return {Object} Returned object
+     */
+
+
+
+
+static async CreateOrder (req, res)  {
     const newOrder = new Order(req.body);
 
     try {
@@ -14,7 +29,7 @@ exports.CreateOrder =  async (req, res) => {
 }
 
 
-exports.UpdateOrder =  async (req, res) => {
+static async UpdateOrder (req, res)  {
 
     try {
         const updatedOrder = await Product.findByIdAndUpdate(req.params.id, {
@@ -27,8 +42,7 @@ exports.UpdateOrder =  async (req, res) => {
     }
 }
 
-
-exports.DeleteOrder = async (req, res) => {
+static async DeleteOrder (req, res)  {
     try {
         await Order.findByIdAndDelete(req.params.id)
         res.status(200).json('Order has been deleted....')
@@ -38,7 +52,7 @@ exports.DeleteOrder = async (req, res) => {
     }
 }
 
-exports.GetOrder = async (req, res) => {
+static async GetOrder(req, res)  {
 
     try {
         const orders = await Order.findById(req.params.id)
@@ -48,7 +62,7 @@ exports.GetOrder = async (req, res) => {
     }
 }
 
-exports.GetAllOrders =  async (req, res) => {
+static async GetAllOrders(req, res) {
     try {
 
         const orders = await Order.find()
@@ -59,7 +73,7 @@ exports.GetAllOrders =  async (req, res) => {
 }
 
 
-exports.GetOrderStats =  async (req, res) => {
+static async GetOrderStats (req, res) {
     const date = new Date();
     const lastMonth = new Date(date.setMonth(date.getMonth()-1))
     const previousMoth = new Date(new Date().setMonth(lastMonth.getMonth()-1))
@@ -86,3 +100,6 @@ exports.GetOrderStats =  async (req, res) => {
         res.status(500).json(err)
     }
 }
+ }
+
+module.exports = OrderController

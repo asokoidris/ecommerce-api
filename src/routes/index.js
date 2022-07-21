@@ -16,12 +16,12 @@ const cartRoute = require ('../routes/carts')
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(helmet())
-app.use(helmet())
+app.use(cors())
 
 
 
 app.use('/api/userAuth', userAuthRoute)
-app.use('/api/users', userRoute)
+app.use('/api/user', userRoute)
 app.use('/api/products', productRoute)
 app.use('/api/orders', orderRoute)
 app.use('/api/carts', cartRoute)

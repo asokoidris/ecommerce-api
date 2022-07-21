@@ -4,7 +4,6 @@ const ProductController = require ('../controller/product');
 const {verifyToken, verifyTokenAndAuthorization, 
     verifyTokenAndAdmin} = require('../middleware/jwt');
 
-
 // CREATE PRRODUCT
 router.post('/',
  verifyTokenAndAdmin,
