@@ -1,20 +1,55 @@
-const joi = require ('@hapi/joi');
+const joi = require ('joi');
 
 
+class ProductValidate{
 
-const productValidation = data => {
-    const schema = joi.object({
-    title: joi.string()
-         .required() 
-         .unique(),
-     desc: joi.string()
-         .required(),
-     img: joi.string().required(),
-     categories: joi.array(),
-      size: joi.string(),
-     color: joi.string(),
-     price: joi.number()
-    })
+static async getProduct(req, res, next) {
+    try{
+        const schema = await joi.object({
+            
+        })
+    }catch(err){
+        res.status(500).json(err)
+    }
 }
 
-module.exports . productValidation =   productValidation;
+static async addProduct(req, res, next) {
+    try{
+        const schema = await joi.object({
+            
+        })
+    }catch(err){
+        res.status(500).json(err)
+    }
+}
+
+
+static async updatProduct(req, res, next) {
+    try{
+        const schema = await joi.object({
+            
+        })
+    }catch(err){
+        res.status(500).json(err)
+    }
+}
+
+
+static async getAllProduct(req, res, next) {
+    try{
+        const schema = await joi.object({
+            
+        })
+    }catch(err){
+        res.status(500).json(err)
+    }
+}
+
+
+
+
+
+}
+
+
+module.exports = ProductValidate

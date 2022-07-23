@@ -1,54 +1,49 @@
-const joi = require ('@hapi/joi');
+const joi = require ('joi');
 
 
+class AuthValidate{
 
-// REGISTER VALIDATION
+    static async signUpAdmin(req, res, next) {
+        try {
+            const adminRegisterForm = Joi.object({
+                username: Joi.string().required(),
+                email: Joi.string().required().email(),
+                firstName: Joi.string().required(),
+                lastName: Joi.string().required(),
+                role: Joi.array()
+                    .required()
+                    .items(
+                        Joi.string().valid('user')
 
-const registerValidation = data => {
-    const schema = joi.object({
-        username: joi.string()
-        .min(6)
-        .required()
-        .unique(),
+                    ),
+                password: Joi.string()
+                    .min(6)
+                    .pattern(new RegExp('[^a-z/A-z]'))
+                    .required(),
+            })
+            await adminRegisterForm.validateAsync(req.body, {
+                abortEarly: false,
+            })
+            next()
+        } catch (error) {
+            res.status(200).json(error.message)
+        }
+    }
 
-        email:  joi.string()
-                .email()
-               .required()
-               .unique(),
-         password: joi.string()
-                  .min(6)
-                  .required()
-                  .unique(),
-
-           isAdmin: joi.boolean()
-                      .default(),      
-                
-    });
-    return schema.validate(data);
-
-}
-
-
-
-// LOGIN VALIDATION
-
-
-const loginValidation = data => { 
-    const schema = joi.object({
-        username : joi.string()
-                .required(),
-                
-         email: joi.string()
-              .required(),
-
-        password: joi.string()   
-                     .required(),
-            
-    });
-    return schema.validate(data)
+    static async login(req, res, next) {
+        try {
+            const loginAdminSchema = Joi.object({
+                email: Joi.string().email().required(),
+                password: Joi.string().required(),
+            }).or('email', 'phoneNumber')
+            await loginAdminSchema.validateAsync(req.body, {
+                abortEarly: false,
+            })
+            next()
+        } catch (error) {
+            res.status(200).json(error.message)
+        }
+    }
 
 }
-
-module.exports.registerValidation = registerValidation
-
-module.exports.loginValidation = loginValidation 
+module.exports = AuthValidate

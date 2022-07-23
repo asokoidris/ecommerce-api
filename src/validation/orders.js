@@ -1,21 +1,51 @@
-const joi = require ('@hapi/joi');
+const joi = require ('joi');
 
 
-const orderValidation = data => {
-    const schema = joi.object({
-        userId: joi.string() 
-        .required(),
-        products: joi.array(),
-        productId: joi.string(),
-        quantity: joi.string(),
-        amount: joi.number()
-        .required(),
-        address: joi.object()
-        .required(),
-        status: joi.string(),
+class OrderValidate{
 
-    })
+static async getOrder(req, res, next) {
+    try{
+        const schema = await joi.object({
+            
+        })
+    }catch(err){
+        res.status(500).json(err)
+    }
+}
+
+static async createOrder(req, res, next) {
+    try{
+        const schema = await joi.object({
+            
+        })
+    }catch(err){
+        res.status(500).json(err)
+    }
 }
 
 
-module.exports.orderValidation = orderValidation;
+static async updateOrder(req, res, next) {
+    try{
+        const schema = await joi.object({
+            
+        })
+    }catch(err){
+        res.status(500).json(err)
+    }
+}
+
+
+static async getAllOrders(req, res, next) {
+    try{
+        const schema = await joi.object({
+            
+        })
+    }catch(err){
+        res.status(500).json(err)
+    }
+}
+}
+module.exports = OrderValidate
+
+
+
