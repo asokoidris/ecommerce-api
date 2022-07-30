@@ -1,6 +1,6 @@
 const server= require ('./src/routes/index');
  const db = require ('./src/config/db')
-
+const key = require ('./src/config/key')
 
 const Port = process.env.PORT || 5000
 
@@ -12,9 +12,10 @@ db()
     });
 
 // running the app service
-server.listen ( Port, () => console.log(`server running on ${Port}`));
 
-
+server.listen(Port, () => {
+    console.log(`server running in ${process.env.NODE_ENV} mode on port ${Port}`)
+})
 
 
 
