@@ -2,7 +2,7 @@ const server= require ('./src/routes/index');
  const db = require ('./src/config/db')
 const key = require ('./src/config/key')
 
-const Port = process.env.PORT || 5000
+const Port = process.env.PORT || 6000
 
 db()
     .then(() => {
@@ -16,7 +16,3 @@ db()
 server.listen(Port, () => {
     console.log(`server running in ${process.env.NODE_ENV} mode on port ${Port}`)
 })
-
-
-
-
