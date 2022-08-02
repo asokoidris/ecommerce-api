@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs');
 const User = require('../model/users')
+const HelperFunction = require('../utils/helper')
 
 /**
  * @description Authentication Controller
@@ -15,8 +16,7 @@ class UserAuthController {
      */
     static async userSignUp(req, res) {
         try {
-            const salt = await bcrypt.genSalt(10);
-            const hashedPassword = await bcrypt.hash(req.body.password, salt);
+            const hashedPassword = await HelperFunction.hashPassword(req.body.password)
 
             const newUser = await new User({
                 username: req.body.username,
@@ -39,8 +39,8 @@ class UserAuthController {
             const user = await User.findOne({ email: req.body.email });
             !user && res.status(404).json('user not found');
 
-            const isMatchPassword = await bcrypt.compare(req.body.password, user.password);
-            !isMatchPassword && res.status(404).json('Wrong password');
+            const isMatchPassword = await HelperFunction.comparePassword(req.body.password, hash);
+             !isMatchPassword && res.status(404).json('Wrong password');
             const accessToken = jwt.sign({
                 id: user._id
             },
