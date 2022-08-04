@@ -10,7 +10,7 @@ class HelperFunction {
     }
 
     static async comparePassword(password, hash) {
-        const isValid = await bcrypt.compare(password,hash)
+        const isValid = await bcrypt.compare(password, hash)
         return isValid
     }
 }

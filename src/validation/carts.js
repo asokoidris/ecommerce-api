@@ -1,7 +1,7 @@
-const joi = require ('joi');
+const joi = require('joi');
 
 
- class CartValidate{
+class CartValidate {
 
 
     static async getCart(req, res, next) {
@@ -23,7 +23,7 @@ const joi = require ('joi');
     static async addCart(req, res, next) {
         try {
             const schema = await Joi.object({
-                itemId:Joi.string().required(),
+                itemId: Joi.string().required(),
                 color: Joi.string(),
                 size: Joi.string(),
                 quantity: Joi.number().default(1),
@@ -40,7 +40,7 @@ const joi = require ('joi');
     static async updateCart(req, res, next) {
         try {
             const schema = await Joi.object({
-                itemId:Joi.string().required(),
+                itemId: Joi.string().required(),
                 color: Joi.string(),
                 size: Joi.string(),
                 quantity: Joi.number().default(1),
