@@ -14,5 +14,5 @@ db()
 // running the app service
 
 server.listen(Port, () => {
-    console.log(`server running in ${process.env.NODE_ENV} mode on port ${Port}`)
+    console.log(`backend server running in ${process.env.NODE_ENV} mode on port ${Port}`)
 })

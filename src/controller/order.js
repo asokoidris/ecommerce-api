@@ -32,7 +32,7 @@ class OrderController {
     static async UpdateOrder(req, res) {
 
         try {
-            const updatedOrder = await Product.findByIdAndUpdate(req.params.id, {
+            const updatedOrder = await Order.findByIdAndUpdate(req.params.id, {
                 $set: req.body
             }, { new: true }
             );
