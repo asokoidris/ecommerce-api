@@ -5,15 +5,16 @@ const {verifyToken,
     verifyTokenAndAdmin} = require('../middleware/jwt')
 const router = express.Router();
 const UserController = require('../controller/users')
-
+const UserValidate = require ('../validation/user')
  
 
 // UPDATE USER
 
 
 router.put('/:id',
- verifyTokenAndAuthorization,
- UserController.updateUser
+  verifyTokenAndAuthorization,
+ UserController.updateUser,
+ UserValidate.validateUser
  )
 
 // DELETE USER
@@ -21,7 +22,8 @@ router.put('/:id',
 
 router.delete('/:id', 
 verifyTokenAndAuthorization,
-UserController.DeleteUser
+UserController.DeleteUser,
+UserValidate.validateUser
 )
 
 
@@ -29,7 +31,8 @@ UserController.DeleteUser
 
 router.get('/find/:id',
  verifyTokenAndAdmin,
- UserController. GetUser
+ UserController. GetUser,
+ UserValidate.validateUser
  )
 
 
@@ -38,13 +41,15 @@ router.get('/find/:id',
 router.get('/', 
 verifyTokenAndAdmin,
 UserController.GetAllUsers,
+UserValidate.validateUser
 )
 
 
 // USER STATS
 router.get('/stats',
  verifyTokenAndAdmin,
- UserController.UserStats
+ UserController.UserStats,
+ UserValidate.validateUser
  )
 
 
