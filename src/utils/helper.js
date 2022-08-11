@@ -5,6 +5,7 @@ class HelperFunction {
 
 
     static async hashPassword(password) {
+        
         const hash = await bcrypt.hash(password, 10)
         return hash
     }

@@ -3,7 +3,7 @@ const app = express()
 const bodyParser = require('body-parser');
 const helmet = require ('helmet');
 const cors = require ('cors');
-
+const morgan = require ('morgan')
 
 
 const userAuthRoute = require('../routes/userAuth')
@@ -13,6 +13,7 @@ const orderRoute = require ('../routes/orders')
 const cartRoute = require ('../routes/carts')
 
 
+app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(helmet())

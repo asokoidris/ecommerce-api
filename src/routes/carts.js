@@ -3,19 +3,21 @@ const router = express.Router()
 const CartController = require ('../controller/cart')
 const {verifyToken, verifyTokenAndAuthorization,
      verifyTokenAndAdmin} = require('../middleware/jwt');
-
+const CartValidate = require ('../validation/carts')
 
 // CREATE cart
 router.post('/',
  verifyToken,
- CartController.createCart
+ CartController.createCart,
+ CartValidate.validateCart
  )
 
 // UPDATE CART
 
  router.put('/:id',
  verifyTokenAndAuthorization,
- CartController.updateCart
+ CartController.updateCart,
+ CartValidate.validateCart
  )
 
 
@@ -23,21 +25,24 @@ router.post('/',
 
  router.delete('/:id',
  verifyTokenAndAuthorization,
- CartController.deleteCart
+ CartController.deleteCart,
+ CartValidate.validateCart
  )
 
  // GET USER CART
 
  router.get('/find/:userId',
   verifyTokenAndAuthorization,
-  CartController.getUserCart
+  CartController.getUserCart,
+  CartValidate.validateCart
   )
 
 
  // GET ALL CARTS
  router.get('/', 
  verifyTokenAndAdmin,
- CartController.getAllUserCarts
+ CartController.getAllUserCarts,
+ CartValidate.validateCart
   )
 
 

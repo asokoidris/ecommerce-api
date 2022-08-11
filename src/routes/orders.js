@@ -2,12 +2,13 @@ const express = require('express')
 const router = express.Router()
 const OrderController = require ('../controller/order');
 const { verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin } = require('../middleware/jwt');
-
+const OrderValidate = require('../validation/orders')
 
 // CREATE ORDER
 router.post('/',
  verifyToken,
-OrderController.CreateOrder
+OrderController.CreateOrder,
+OrderValidate.validateOrder
 )
 
 
@@ -16,7 +17,8 @@ OrderController.CreateOrder
 
 router.put('/:id',
  verifyTokenAndAdmin,
- OrderController.UpdateOrder
+ OrderController.UpdateOrder,
+ OrderValidate.validateOrder
  )
 
 
@@ -25,7 +27,8 @@ router.put('/:id',
 
 router.delete('/:id',
  verifyTokenAndAdmin,
- OrderController.DeleteOrder
+ OrderController.DeleteOrder,
+ OrderValidate.validateOrder
  )
 
 
@@ -33,7 +36,8 @@ router.delete('/:id',
 
 router.get('/find/:id',
  verifyTokenAndAuthorization,
- OrderController.GetOrder
+ OrderController.GetOrder,
+ OrderValidate.validateOrder
  )
 
 
@@ -41,7 +45,8 @@ router.get('/find/:id',
 
 router.get('/'
 , verifyTokenAndAdmin,
-OrderController.GetAllOrders
+OrderController.GetAllOrders,
+OrderValidate.validateOrder
 )
 
 
@@ -49,7 +54,8 @@ OrderController.GetAllOrders
 
 router.get('/income',
  verifyTokenAndAdmin,
- OrderController.GetOrderStats
+ OrderController.GetOrderStats,
+ OrderValidate.validateOrder
  )
 
 

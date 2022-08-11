@@ -17,14 +17,17 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
-        unique: true,
         min : 6,
         max: 15
     },
     phoneNumber:{
         type: Number,
-        required: true
+        
     },
+    isAdmin: {
+        type: Boolean,
+        default:false
+    }
    
 },
     { timestamps: true }
