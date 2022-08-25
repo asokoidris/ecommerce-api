@@ -7,17 +7,17 @@ class UserValidate {
         try {
             const schema = await joi.object({
                 username: joi.string()
-                    .require()
+                    .required()
                     .unique()
                     .trim(),
 
                     email: joi.string()
-                    .require()
+                    .required()
                     .unique()
                     .trim(),
 
                     password: joi.string()
-                    .require()
+                    .required()
                     .min(6)
                     .max(15),
                     phoneNumber: joi.number(),
