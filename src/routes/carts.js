@@ -1,49 +1,49 @@
-const express = require ('express')
+const express = require('express')
 const router = express.Router()
-const CartController = require ('../controller/cart')
-const {verifyToken, verifyTokenAndAuthorization,
-     verifyTokenAndAdmin} = require('../middleware/jwt');
-const CartValidate = require ('../validation/carts')
+const CartController = require('../controller/cart')
+const { verifyToken, verifyTokenAndAuthorization,
+     verifyTokenAndAdmin } = require('../middleware/jwt');
+const CartValidate = require('../validation/carts')
 
 // CREATE cart
 router.post('/',
- verifyToken,
- CartController.createCart,
- CartValidate.validateCart
- )
+     verifyToken,
+     CartController.createCart,
+     CartValidate.validateCart
+)
 
 // UPDATE CART
 
- router.put('/:id',
- verifyTokenAndAuthorization,
- CartController.updateCart,
- CartValidate.validateCart
- )
+router.put('/:id',
+     verifyTokenAndAuthorization,
+     CartController.updateCart,
+     CartValidate.validateCart
+)
 
 
 // DELETE CART
 
- router.delete('/:id',
- verifyTokenAndAuthorization,
- CartController.deleteCart,
- CartValidate.validateCart
- )
+router.delete('/:id',
+     verifyTokenAndAuthorization,
+     CartController.deleteCart,
+     CartValidate.validateCart
+)
 
- // GET USER CART
+// GET USER CART
 
- router.get('/find/:userId',
-  verifyTokenAndAuthorization,
-  CartController.getUserCart,
-  CartValidate.validateCart
-  )
+router.get('/find/:userId',
+     verifyTokenAndAuthorization,
+     CartController.getUserCart,
+     CartValidate.validateCart
+)
 
 
- // GET ALL CARTS
- router.get('/', 
- verifyTokenAndAdmin,
- CartController.getAllUserCarts,
- CartValidate.validateCart
-  )
+// GET ALL CARTS
+router.get('/',
+     verifyTokenAndAdmin,
+     CartController.getAllUserCarts,
+     CartValidate.validateCart
+)
 
 
 

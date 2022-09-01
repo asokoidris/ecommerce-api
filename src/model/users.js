@@ -6,7 +6,7 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true,
-        trim:true
+        trim: true
     },
     email: {
         type: String,
@@ -18,18 +18,18 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-        min : 6
-    
+        min: 6
+
     },
-    phoneNumber:{
+    phoneNumber: {
         type: Number,
-        
+
     },
     isAdmin: {
         type: Boolean,
-        default:false
+        default: false
     }
-   
+
 },
     { timestamps: true }
 )

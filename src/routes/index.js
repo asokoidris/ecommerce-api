@@ -1,16 +1,16 @@
 const express = require('express');
 const app = express()
 const bodyParser = require('body-parser');
-const helmet = require ('helmet');
-const cors = require ('cors');
-const morgan = require ('morgan')
+const helmet = require('helmet');
+const cors = require('cors');
+const morgan = require('morgan')
 
 
 const userAuthRoute = require('../routes/userAuth')
 const userRoute = require('../routes/users')
 const productRoute = require('../routes/product')
-const orderRoute = require ('../routes/orders')
-const cartRoute = require ('../routes/carts')
+const orderRoute = require('../routes/orders')
+const cartRoute = require('../routes/carts')
 
 
 app.use(morgan("dev"));
