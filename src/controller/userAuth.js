@@ -1,5 +1,6 @@
 const User = require('../model/users');
 const HelperFunction = require('../utils/helper');
+const UserManager = require ('../modules/classes/user')
 const jwt = require ('jsonwebtoken');
 
 
