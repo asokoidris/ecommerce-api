@@ -8,30 +8,35 @@ const UserSchema = new mongoose.Schema({
         unique: true,
         trim: true
     },
+
     email: {
         type: String,
         required: true,
         unique: true,
         trim: true
     },
+
     password: {
         type: String,
         required: true,
         trim: true,
         min: 6
-
     },
+
     phoneNumber: {
         type: Number,
 
     },
+    
     status: {
         type: String,
         default: 'active'
     }
 
 },
+
     { timestamps: true }
+    
 )
 
 module.exports = mongoose.model('User', UserSchema);

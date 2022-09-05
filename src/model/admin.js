@@ -27,7 +27,7 @@ const AdminSchema = new mongoose.Schema({
         trim: true,
     },
     role: {
-        type: [String],
+        type: String,
         default: 'admin',
     
     },

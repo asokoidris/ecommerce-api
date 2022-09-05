@@ -1,6 +1,5 @@
 const User = require('../model/users');
 const HelperFunction = require('../utils/helper');
-const UserManager = require ('../modules/classes/user')
 const jwt = require ('jsonwebtoken');
 
 
@@ -50,9 +49,10 @@ class UserAuthController {
                 process.env.JWT_SEC,
                 process.env.EXP_SEC
             );
-            const { password, updateAt, ...others } = user._doc;
+            const { password,updatedAt, ...others } = user._doc;
 
             res.status(200).json({...others, accessToken})
+            
         } catch (error) {
             res.status(500).json(error.message)
         }
