@@ -1,6 +1,6 @@
 const User = require('../model/users');
 const HelperFunction = require('../utils/helper');
-const jwt = require ('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 
 
 
@@ -17,7 +17,7 @@ class UserAuthController {
      */
     static async userSignUp(req, res) {
         try {
-        
+
             const hashedPassword = await HelperFunction.hashPassword(req.body.password)
 
             const newUser = await new User({
@@ -49,10 +49,10 @@ class UserAuthController {
                 process.env.JWT_SEC,
                 process.env.EXP_SEC
             );
-            const { password,updatedAt, ...others } = user._doc;
+            const { password, updatedAt, ...others } = user._doc;
 
-            res.status(200).json({...others, accessToken})
-            
+            res.status(200).json({ ...others, accessToken })
+
         } catch (error) {
             res.status(500).json(error.message)
         }
