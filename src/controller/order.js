@@ -1,5 +1,10 @@
 const Order = require('../model/order');
-
+const {
+    successResponse,
+    loginSuccessResponse,
+    errorResponse,
+    paginationSuccessResponse,
+} = require ('../middleware/respond')
 
 
 /**
@@ -21,10 +26,16 @@ class OrderController {
         const newOrder = new Order(req.body);
 
         try {
-            const savedOrder = await newOrder.save();
-            res.status(200).json(savedOrder)
-        } catch (err) {
-            res.status(500).json(err)
+            const order = await newOrder.save();
+
+            return successResponse(
+                res,
+                201,
+                'Order successfully created',
+                order
+            )
+        } catch (error) {
+            return errorResponse(res, 500, 'Internal Server Error')
         }
     }
 
@@ -32,33 +43,49 @@ class OrderController {
     static async UpdateOrder(req, res) {
 
         try {
-            const updatedOrder = await Order.findByIdAndUpdate(req.params.id, {
+            const order = await Order.findByIdAndUpdate(req.params.id, {
                 $set: req.body
             }, { new: true }
             );
-            res.status(200).json(updatedOrder)
-        } catch (err) {
-            res.status(500).json(err)
+            return successResponse(
+                res,
+                201,
+                'Order successfully updated',
+                order
+            )
+        } catch (error) {
+            return errorResponse(res, 500, 'Internal Server Error')
         }
     }
 
     static async DeleteOrder(req, res) {
         try {
             await Order.findByIdAndDelete(req.params.id)
-            res.status(200).json('Order has been deleted....')
 
-        } catch (err) {
-            res.status(500).json(err)
+            return successResponse(
+                res,
+                201,
+                'Order successfully deleted',
+
+            )
+        } catch (error) {
+            return errorResponse(res, 500, 'Internal Server Error')
         }
     }
 
     static async GetOrder(req, res) {
 
         try {
-            const orders = await Order.findById(req.params.id)
-            res.status(200).json(orders)
-        } catch (err) {
-            res.status(500).json(err)
+            const order = await Order.findById(req.params.id)
+
+            return successResponse(
+                res,
+                201,
+                'Order successfully fetched',
+                order
+            )
+        } catch (error) {
+            return errorResponse(res, 500, 'Internal Server Error')
         }
     }
 
@@ -66,9 +93,15 @@ class OrderController {
         try {
 
             const orders = await Order.find()
-            res.status(200).json(orders)
-        } catch (err) {
-            res.status(500).json(err)
+
+            return successResponse(
+                res,
+                201,
+                'Orders successfully fetched',
+                orders
+            )
+        } catch (error) {
+            return errorResponse(res, 500, 'Internal Server Error')
         }
     }
 
@@ -94,10 +127,15 @@ class OrderController {
                     },
                 },
             ]);
-            res.status(200).json(income)
 
-        } catch (err) {
-            res.status(500).json(err)
+            return successResponse(
+                res,
+                201,
+                'Income successfully fetched',
+                income
+            )
+        } catch (error) {
+            return errorResponse(res, 500, 'Internal Server Error')
         }
     }
 }

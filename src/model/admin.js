@@ -1,4 +1,4 @@
-const mongoose = require ('mongoose');
+const mongoose = require('mongoose');
 
 const AdminSchema = new mongoose.Schema({
 
@@ -29,7 +29,7 @@ const AdminSchema = new mongoose.Schema({
     role: {
         type: String,
         default: 'admin',
-    
+
     },
     password: {
         type: String,
@@ -38,7 +38,7 @@ const AdminSchema = new mongoose.Schema({
     status: {
         type: String,
         default: 'active',
-    
+
     },
 })
 module.exports = mongoose.model('Admin', AdminSchema)

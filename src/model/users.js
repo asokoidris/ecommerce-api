@@ -27,7 +27,7 @@ const UserSchema = new mongoose.Schema({
         type: Number,
 
     },
-    
+
     status: {
         type: String,
         default: 'active'
@@ -36,7 +36,7 @@ const UserSchema = new mongoose.Schema({
 },
 
     { timestamps: true }
-    
+
 )
 
 module.exports = mongoose.model('User', UserSchema);

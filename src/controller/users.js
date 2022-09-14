@@ -1,4 +1,9 @@
-
+const {
+    successResponse,
+    loginSuccessResponse,
+    errorResponse,
+    paginationSuccessResponse,
+} = require ('../middleware/respond')
 const User = require('../model/users')
 const bcrypt = require('bcryptjs')
 
@@ -24,9 +29,14 @@ class UserController {
                 $set: req.body
             }, { new: true }
             );
-            res.status(200).json(updatedUser)
+            return successResponse(
+                res,
+                201,
+                'User successfully updated',
+                updatedUser
+            )
         } catch (error) {
-            res.status(500).json(error.message)
+            return errorResponse(res, 500, 'Internal Server Error')
         }
     }
 
@@ -34,10 +44,15 @@ class UserController {
     static async DeleteUser(req, res) {
         try {
             await User.findByIdAndDelete(req.params.id)
-            res.status(200).json('User has been deleted....')
+            return successResponse(
+                res,
+                201,
+                'User successfully deleted',
+                updatedUser
+            )
 
-        } catch (err) {
-            res.status(500).json(err)
+        } catch (error) {
+            return errorResponse(res, 500, 'Internal Server Error')
         }
     }
 
@@ -46,9 +61,14 @@ class UserController {
             const user = await User.findById(req.params.id)
             const { password, ...others } = user._doc;
 
-            res.status(200).json(others)
-        } catch (err) {
-            res.status(500).json(err)
+            return successResponse(
+                res,
+                201,
+                'User successfully fetched',
+                others
+            )
+        } catch (error) {
+            return errorResponse(res, 500, 'Internal Server Error')
         }
     }
 
@@ -58,9 +78,14 @@ class UserController {
             const users = query
                 ? await User.find().sort({ _id: -1 }).limit(2)
                 : await User.find()
-            res.status(200).json(users)
-        } catch (err) {
-            res.status(500).json(err)
+                return successResponse(
+                    res,
+                    201,
+                    'Users successfully fetched',
+                    users
+                )
+        }catch (error) {
+            return errorResponse(res, 500, 'Internal Server Error')
         }
     }
 
@@ -83,9 +108,14 @@ class UserController {
                     },
                 },
             ])
-            res.status(200).json(data)
-        } catch (err) {
-            res.status(500).json(err)
+            return successResponse(
+                res,
+                201,
+                'UserData successfully fetched',
+                data
+            )
+        } catch (error) {
+            return errorResponse(res, 500, 'Internal Server Error')
         }
     }
 }

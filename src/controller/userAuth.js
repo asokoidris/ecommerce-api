@@ -1,7 +1,12 @@
 const User = require('../model/users');
 const HelperFunction = require('../utils/helper');
 const jwt = require('jsonwebtoken');
-
+const {
+    successResponse,
+    loginSuccessResponse,
+    errorResponse,
+    paginationSuccessResponse,
+} = require ('../middleware/respond')
 
 
 /**
@@ -26,11 +31,16 @@ class UserAuthController {
                 phoneNumber: req.body.phoneNumber,
                 password: hashedPassword,
             });
-            const savedUser = await newUser.save();
-            res.status(200).json(savedUser)
+            const registeredUser = await newUser.save();
+            return successResponse(
+                res,
+                201,
+                'User successfully registered',
+                registeredUser
+            )
         }
         catch (error) {
-            res.status(500).json(error.message)
+            return errorResponse(res, 500, 'Internal Server Error')
         }
 
     }
@@ -39,22 +49,28 @@ class UserAuthController {
     static async userSignIn(req, res) {
         try {
             const user = await User.findOne({ email: req.body.email });
-            !user && res.status(404).json('user not found');
             const isMatchPassword = await HelperFunction.comparePassword(req.body.password, user.password);
-            !isMatchPassword && res.status(404).json('Wrong password');
-
-            const accessToken = jwt.sign({
+            if(!isMatchPassword) {
+            return errorResponse(res, 404, 'user not found');
+            } else{
+            const token = jwt.sign({
                 id: user._id
             },
                 process.env.JWT_SEC,
                 process.env.EXP_SEC
             );
-            const { password, updatedAt, ...others } = user._doc;
-
-            res.status(200).json({ ...others, accessToken })
-
+            
+            return loginSuccessResponse(
+                res,
+                200,
+                token,
+                'User successfully logged in',
+                user
+            )
+            // res.status(200).json({ ...others, accessToken })
+            }
         } catch (error) {
-            res.status(500).json(error.message)
+            return errorResponse(res, 500, 'Internal Server Error')
         }
     }
 }

@@ -1,5 +1,10 @@
 const Product = require('../model/products');
-
+const {
+    successResponse,
+    loginSuccessResponse,
+    errorResponse,
+    paginationSuccessResponse,
+} = require ('../middleware/respond')
 
 
 
@@ -20,10 +25,16 @@ class ProductController {
         const newProduct = new Product(req.body);
 
         try {
-            const savedProduct = await newProduct.save();
-            res.status(200).json(savedProduct)
-        } catch (err) {
-            res.status(500).json(err)
+            const product = await newProduct.save();
+
+            return successResponse(
+                res,
+                201,
+                'Product successfully created',
+                product
+            )
+        } catch (error) {
+            return errorResponse(res, 500, 'Internal Server Error')
         }
     }
 
@@ -31,13 +42,19 @@ class ProductController {
     static async UpdateProduct(req, res) {
 
         try {
-            const updatedProduct = await Product.findByIdAndUpdate(req.params.id, {
+            const product = await Product.findByIdAndUpdate(req.params.id, {
                 $set: req.body
             }, { new: true }
             );
-            res.status(200).json(updatedProduct)
-        } catch (err) {
-            res.status(500).json(err)
+
+            return successResponse(
+                res,
+                201,
+                'Product successfully updated',
+                product
+            )
+        } catch (error) {
+            return errorResponse(res, 500, 'Internal Server Error')
         }
     }
 
@@ -45,10 +62,16 @@ class ProductController {
     static async DeleteProduct(req, res) {
         try {
             await Product.findByIdAndDelete(req.params.id)
-            res.status(200).json('Product has been deleted....')
 
-        } catch (err) {
-            res.status(500).json(err)
+            return successResponse(
+                res,
+                201,
+                'Product successfully deleted',
+
+            )
+
+        } catch (error) {
+            return errorResponse(res, 500, 'Internal Server Error')
         }
     }
 
@@ -57,9 +80,15 @@ class ProductController {
 
         try {
             const product = await Product.findById(req.params.id)
-            res.status(200).json(product)
-        } catch (err) {
-            res.status(500).json(err)
+
+            return successResponse(
+                res,
+                201,
+                'Product successfully fetched',
+                product
+            )
+        } catch (error) {
+            return errorResponse(res, 500, 'Internal Server Error')
         }
     }
 
@@ -81,9 +110,15 @@ class ProductController {
             } else {
                 products = await Product.find()
             }
-            res.status(200).json(products)
+
+            return successResponse(
+                res,
+                201,
+                'Products successfully fetched',
+                products
+            )
         } catch (error) {
-            res.status(500).json(error.message)
+            return errorResponse(res, 500, 'Internal Server Error')
         }
 
     }

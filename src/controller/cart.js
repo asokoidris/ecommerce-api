@@ -1,5 +1,10 @@
 const Cart = require('../model/carts');
-
+const {
+    successResponse,
+    loginSuccessResponse,
+    errorResponse,
+    paginationSuccessResponse,
+} = require ('../middleware/respond')
 
 /**
  * @description Cart Controller
@@ -17,32 +22,49 @@ class CartController {
         const newCart = new Cart(req.body);
 
         try {
-            const savedCart = await newCart.save();
-            res.status(200).json(savedCart)
-        } catch (err) {
-            res.status(500).json(err)
+            const cart = await newCart.save();
+
+            return successResponse(
+                res,
+                201,
+                'Cart successfully created',
+                cart
+            )
+        } catch (error) {
+            return errorResponse(res, 500, 'Internal Server Error')
         }
     }
 
     static async updateCart(req, res) {
         try {
-            const updatedCart = await Cart.findByIdAndUpdate(req.params.id, {
+            const cart = await Cart.findByIdAndUpdate(req.params.id, {
                 $set: req.body
             }, { new: true }
             );
-            res.status(200).json(updatedCart)
-        } catch (err) {
-            res.status(500).json(err)
+
+            return successResponse(
+                res,
+                201,
+                'Cart successfully updated',
+                cart
+            )
+        } catch (error) {
+            return errorResponse(res, 500, 'Internal Server Error')
         }
     }
 
     static async deleteCart(req, res) {
         try {
             await Cart.findByIdAndDelete(req.params.id)
-            res.status(200).json('Cart has been deleted....')
 
-        } catch (err) {
-            res.status(500).json(err)
+            return successResponse(
+                res,
+                201,
+                'Cart successfully deleted',
+
+            )
+        } catch (error) {
+            return errorResponse(res, 500, 'Internal Server Error')
         }
     }
 
@@ -51,9 +73,15 @@ class CartController {
 
         try {
             const cart = await Cart.findone({ userId: req.params.userId })
-            res.status(200).json(cart)
-        } catch (err) {
-            res.status(500).json(err)
+
+            return successResponse(
+                res,
+                201,
+                'Cart successfully fetched',
+                cart
+            )
+        } catch (error) {
+            return errorResponse(res, 500, 'Internal Server Error')
         }
     }
 
@@ -61,9 +89,15 @@ class CartController {
     static async getAllUserCarts(req, res) {
         try {
             const carts = await Cart.find();
-            res.status(200).json(carts)
-        } catch (err) {
-            res.status(500).json(err)
+
+            return successResponse(
+                res,
+                201,
+                'Carts successfully fetched',
+                carts
+            )
+        } catch (error) {
+            return errorResponse(res, 500, 'Internal Server Error')
         }
     }
 }
