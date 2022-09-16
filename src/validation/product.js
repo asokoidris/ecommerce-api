@@ -1,25 +1,25 @@
-const joi = require ('joi');
+const joi = require('joi');
 
 
-class ProductValidate{
-
-static async validateProduct(req, res, next) {
-    try{
-        const schema = await joi.object({
-            title: joi.string().required(),
-            desc: joi.string().required(),
-            image: joi.string().required(),
-            categories: joi.array(),
-            size: joi.string(),
-            color: joi.string(),
-            price: joi.number().required()
-        })
-    }catch(error){
-        res.status(500).json(error.message)
+class OrderValidate {
+    static async validateOrder(req, res, next) {
+        try {
+            const schema = await Joi.object({
+                userId: Joi.string().required(),
+                productId: Joi.string().required(),
+                quantity: Joi.number().default(1),
+                amount: joi.number().required(),
+                address:joi.object().required(),
+                status:joi.string().default()
+            })
+            await schema.validateAsync(req.body, {
+                abortEarly: false,
+            })
+            next()
+        } catch (error) {
+            return errorResponse(res, 400, error.message)
+        }
     }
 }
 
-}
-
-
-module.exports = ProductValidate
+module.exports = OrderValidate
