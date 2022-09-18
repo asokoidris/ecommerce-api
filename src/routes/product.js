@@ -3,7 +3,7 @@ const router = express.Router()
 const ProductValidate = require('../validation/product')
 const ProductController = require('../controller/product');
 const { verifyToken, verifyTokenAndAuthorization,
-    verifyTokenAndAdmin } = require('../middleware/jwt');
+    verifyTokenAndAdmin } = require('../middleware/authmiddleware');
 
     const multer = require('multer')
     const path = require('path');
