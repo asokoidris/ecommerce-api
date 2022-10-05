@@ -6,7 +6,7 @@ const {
     loginSuccessResponse,
     errorResponse,
     paginationSuccessResponse,
-} = require ('../middleware/respond')
+} = require('../middleware/respond')
 
 
 /**
@@ -50,24 +50,24 @@ class UserAuthController {
         try {
             const user = await User.findOne({ email: req.body.email });
             const isMatchPassword = await HelperFunction.comparePassword(req.body.password, user.password);
-            if(!isMatchPassword) {
-            return errorResponse(res, 404, 'user not found');
-            } else{
-            const token = jwt.sign({
-                id: user._id
-            },
-                process.env.JWT_SEC,
-                process.env.EXP_SEC
-            );
-            
-            return loginSuccessResponse(
-                res,
-                200,
-                token,
-                'User successfully logged in',
-                user
-            )
-            // res.status(200).json({ ...others, accessToken })
+            if (!isMatchPassword) {
+                return errorResponse(res, 404, 'user not found');
+            } else {
+                const token = jwt.sign({
+                    id: user._id
+                },
+                    process.env.JWT_SEC,
+                    process.env.EXP_SEC
+                );
+
+                return loginSuccessResponse(
+                    res,
+                    200,
+                    token,
+                    'User successfully logged in',
+                    user
+                )
+                // res.status(200).json({ ...others, accessToken })
             }
         } catch (error) {
             return errorResponse(res, 500, 'Internal Server Error')

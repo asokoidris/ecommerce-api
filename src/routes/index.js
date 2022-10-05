@@ -23,7 +23,7 @@ app.use(cors())
 
 app.use('/api/userAuth', userAuthRoute)
 app.use('/api/user', userRoute)
-app.use('/api/products', productRoute)
+app.use('/api/product', productRoute)
 app.use('/api/orders', orderRoute)
 app.use('/api/carts', cartRoute)
 
