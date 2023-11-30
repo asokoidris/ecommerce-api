@@ -1,0 +1,14 @@
+{
+    "PHONE_VERIFICATION": {
+        "subject": "SMS_VERIFICATION",
+        "body": "Please you initiated a request to verify your email address. Please use the <%= token %> to verify your email address. If you did not initiate this request, please ignore this email. and change your password immediately or contact our support immediately to secure your account."
+    },
+    "BUSINESS_PHONE_VERIFICATION": {
+        "subject": "SMS_VERIFICATION",
+        "body": "Please you initiated a request to verify your email address. Please use the <%= token %> to verify your email address. If you did not initiate this request, please ignore this email. and change your password immediately or contact our support immediately to secure your account."
+    },
+    "MOBILE_FORGOT_PASSWORD": {
+        "subject": "FORGOT_PASSWORD",
+        "body": "Please you initiated a request to reset your password . Please use the <%= token %> to reset your password. If you did not initiate this request, please ignore this email.  or contact our support immediately to secure your account."
+    }
+}

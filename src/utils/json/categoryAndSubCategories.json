@@ -1,0 +1,736 @@
+[
+  {
+      "name": "Gym and Fitness",
+      "description": "A guide to physical well-being and gym activities.",
+      "subcategories": [
+          {
+              "name": "Fitness Equipment",
+              "description": "Machines and tools to aid your fitness journey."
+          },
+          {
+              "name": "Gym Memberships",
+              "description": "Access to top-notch fitness facilities and programs."
+          },
+          {
+              "name": "Personal Training",
+              "description": "Tailored fitness sessions to meet individual goals."
+          },
+          {
+              "name": "Yoga Classes",
+              "description": "A blend of physical postures and mindful breathing."
+          },
+          {
+              "name": "CrossFit",
+              "description": "High-intensity functional training for strength and endurance."
+          },
+          {
+              "name": "Spin Classes",
+              "description": "Cycling sessions synced with motivational tunes."
+          },
+          {
+              "name": "Pilates",
+              "description": "Exercises to strengthen, tone, and boost flexibility."
+          },
+          {
+              "name": "Martial Arts",
+              "description": "Training in diverse combat and self-defense skills."
+          },
+          {
+              "name": "Nutrition Coaching",
+              "description": "Guidance on diet and nutritional intake for health."
+          },
+          {
+              "name": "Group Fitness Classes",
+              "description": "Collective workouts for motivation and camaraderie."
+          }
+      ]
+  },
+  {
+      "name": "Beauty and Well Being",
+      "description": "Services and products enhancing one's beauty and health.",
+      "subcategories": [
+          {
+              "name": "Spa Services",
+              "description": "Treatments to relax, rejuvenate, and refresh."
+          },
+          {
+              "name": "Beauty Products",
+              "description": "Cosmetics and products for skincare and beauty."
+          },
+          {
+              "name": "Hair Salons",
+              "description": "Styling, cutting, and treatments for lustrous locks."
+          },
+          {
+              "name": "Skin Care",
+              "description": "Therapies and products for healthy, glowing skin."
+          },
+          {
+              "name": "Massage Therapy",
+              "description": "Techniques to relieve tension and improve circulation."
+          },
+          {
+              "name": "Nail Salons",
+              "description": "Services for elegant and well-maintained nails."
+          },
+          {
+              "name": "Makeup Artists",
+              "description": "Expert makeup application for all occasions."
+          },
+          {
+              "name": "Wellness Retreats",
+              "description": "Escapes focusing on holistic health and relaxation."
+          },
+          {
+              "name": "Holistic Health",
+              "description": "Natural treatments for body, mind, and spirit."
+          },
+          {
+              "name": "Aromatherapy",
+              "description": "Using essential oils for healing and well-being."
+          }
+      ]
+  },
+  {
+      "name": "Fashion",
+      "description": "Explore the world of fashion, from daily wear to luxury.",
+      "subcategories": [
+          {
+              "name": "Apparel and Clothing",
+              "description": "A range of clothing for all occasions and styles."
+          },
+          {
+              "name": "Fast Fashion",
+              "description": "Trendy and affordable clothing for the fashion-forward."
+          },
+          {
+              "name": "Luxury Fashion",
+              "description": "High-end brands showcasing premium designs."
+          },
+          {
+              "name": "Children Fashion",
+              "description": "Stylish and comfy clothing for the young ones."
+          },
+          {
+              "name": "Plus Size Fashion",
+              "description": "Diverse sizes ensuring everyone looks their best."
+          },
+          {
+              "name": "Footwear",
+              "description": "From casual wear to formal, shoes for all occasions."
+          },
+          {
+              "name": "Workwear",
+              "description": "Apparel suitable for professional settings."
+          },
+          {
+              "name": "Sportswear",
+              "description": "Gear up for physical activities and sports."
+          },
+          {
+              "name": "Watches",
+              "description": "Timepieces combining function with fashion."
+          },
+          {
+              "name": "Handbags",
+              "description": "Accessorize with bags for all occasions and needs."
+          },
+          {
+              "name": "Uniform and Workwear",
+              "description": "Standardized clothing for specific job roles."
+          },
+          {
+              "name": "Active Wear",
+              "description": "Clothing designed for active lifestyles and workouts."
+          }
+      ]
+  },
+  {
+      "name": "Nightlife",
+      "description": "Discover the vibrant life after sundown.",
+      "subcategories": [
+          {
+              "name": "Bars",
+              "description": "Spaces to unwind with a drink in hand."
+          },
+          {
+              "name": "Nightclubs",
+              "description": "Dance the night away with pulsing music and lights."
+          },
+          {
+              "name": "Live Music",
+              "description": "Venues showcasing live musical performances."
+          },
+          {
+            "name": "Karaoke",
+            "description": "Sing your heart out at these lively establishments."
+        },
+        {
+            "name": "Comedy Clubs",
+            "description": "Enjoy a night of laughter with stand-up performances."
+        },
+        {
+            "name": "Dancing",
+            "description": "Spaces dedicated to dancing and movement."
+        },
+        {
+            "name": "Happy Hours",
+            "description": "Special times offering discounted drinks and appetizers."
+        },
+        {
+            "name": "Pub Crawls",
+            "description": "Guided tours hopping from one bar to the next."
+        },
+        {
+            "name": "Wine Tasting",
+            "description": "Sample a variety of wines to discover your favorites."
+        },
+        {
+            "name": "Cocktail Lounges",
+            "description": "Upscale bars offering a wide range of crafted cocktails."
+        }
+    ]
+  },
+  {
+    "name": "Event and Conference",
+    "description": "Services dedicated to organizing and hosting various events.",
+    "subcategories": [
+        {
+            "name": "Event Planning",
+            "description": "Professionals who help organize and manage events."
+        },
+        {
+            "name": "Wedding Planning",
+            "description": "Specialists in making your big day memorable."
+        },
+        {
+            "name": "Catering Services",
+            "description": "Providers of food and drink for events."
+        },
+        {
+            "name": "Event Venues",
+            "description": "Locations suitable for hosting various events."
+        },
+        {
+            "name": "Conferences",
+            "description": "Professional gatherings for networking and learning."
+        },
+        {
+            "name": "Trade Shows",
+            "description": "Exhibitions showcasing products in a specific industry."
+        },
+        {
+            "name": "Party Rentals",
+            "description": "Rent equipment and setups for parties and events."
+        },
+        {
+            "name": "Event Decor",
+            "description": "Decoration services to enhance event ambiance."
+        },
+        {
+            "name": "Event Photography",
+            "description": "Capture memorable moments from your events."
+        },
+        {
+            "name": "Audiovisual Services",
+            "description": "Tech support for sound and visuals at events."
+        }
+    ]
+},
+{
+  "name": "Hotels",
+  "description": "Places of stay ranging from luxurious to budget-friendly.",
+  "subcategories": [
+      {
+          "name": "Budget Hotels",
+          "description": "Affordable accommodations for travelers."
+      },
+      {
+          "name": "Bed and Breakfast",
+          "description": "Cozy lodgings that include morning meals."
+      },
+      {
+          "name": "Boutique Hotels",
+          "description": "Unique and stylish small-scale hotels."
+      },
+      {
+          "name": "Resorts",
+          "description": "Holiday accommodations with a range of amenities."
+      },
+      {
+          "name": "Motels",
+          "description": "Roadside hotels ideal for motorists."
+      },
+      {
+          "name": "Extended Stay",
+          "description": "Accommodations designed for long-term stays."
+      },
+      {
+          "name": "Hostels",
+          "description": "Budget accommodations typically with shared rooms."
+      },
+      {
+          "name": "Inns",
+          "description": "Small hotels or guesthouses."
+      },
+      {
+          "name": "Pet-Friendly Hotels",
+          "description": "Hotels that welcome pets."
+      },
+      {
+          "name": "Eco-Friendly Hotels",
+          "description": "Hotels with a focus on sustainability and eco-practices."
+      }
+  ]
+},
+{
+    "name": "Electronics",
+    "description": "Devices and tools designed to improve daily life and entertainment.",
+    "subcategories": [
+        { 
+            "name": "Mobile Phones",
+            "description": "Portable communication devices with smart capabilities."
+        },
+        {
+            "name": "Laptops",
+            "description": "Portable personal computers with versatile features."
+        },
+        {
+            "name": "Audio Equipment",
+            "description": "Devices designed for sound output, including speakers and headphones."
+        },
+        {
+            "name": "Cameras",
+            "description": "Equipment for capturing still and moving images."
+        },
+        {
+            "name": "Smart Home Devices",
+            "description": "Devices that enable automation and interconnected functionality at home."
+        },
+        {
+            "name": "Gaming Consoles",
+            "description": "Electronic devices specifically designed for video gaming."
+        },
+        {
+            "name": "Wearable Technology",
+            "description": "Electronic devices worn on the body as accessories."
+        },
+        {
+            "name": "Tech Accessories",
+            "description": "Additional components enhancing the functionality of primary devices."
+        },
+        {
+            "name": "Home Appliances",
+            "description": "Electrical machines assisting in household functions."
+        },
+        {
+            "name": "Computer Accessories",
+            "description": "Peripheral devices enhancing computer usability."
+        },
+        {
+            "name": "Software Services",
+            "description": "Digital solutions and platforms catering to specific tasks or processes."
+        }
+    ]
+},
+{
+    "name": "Business Services",
+    "description": "Professional services that assist in the operational aspects of businesses.",
+    "subcategories": [
+        { 
+            "name": "Accounting",
+            "description": "Management and oversight of financial transactions and records."
+        },
+        {
+            "name": "Legal Services",
+            "description": "Professional services pertaining to the law."
+        },
+        {
+            "name": "Marketing and Advertising",
+            "description": "Promotional strategies and executions to boost business presence."
+        },
+        {
+            "name": "Consulting",
+            "description": "Professional advice and strategies across various business sectors."
+        },
+        {
+            "name": "HR Services",
+            "description": "Management and solutions related to human resource functions."
+        },
+        {
+            "name": "IT Support",
+            "description": "Services that assist with technology infrastructure and troubleshooting."
+        },
+        {
+            "name": "Business Coaching",
+            "description": "Guidance and mentorship for business growth and efficiency."
+        },
+        {
+            "name": "Office Space Rentals",
+            "description": "Spaces available for business operations and functions."
+        },
+        {
+            "name": "Financial Planning",
+            "description": "Strategies and plans to manage and grow financial assets."
+        },
+        {
+            "name": "Copywriting Services",
+            "description": "Content creation for promotional and business purposes."
+        },
+        {
+            "name": "Translation Services",
+            "description": "Converting content from one language to another, ensuring context and accuracy."
+        }
+    ]
+},
+{
+    "name": "Restaurant and Food Vendor",
+    "description": "Establishments and services providing food and beverages to customers.",
+    "subcategories": [
+        {
+            "name": "Fine Dining",
+            "description": "Upscale restaurants with premium menus and services."
+        },
+        {
+            "name": "Fast Food",
+            "description": "Quick service restaurants with a focus on speed and convenience."
+        },
+        {
+            "name": "Cafes",
+            "description": "Casual eateries often serving coffee, snacks, and light meals."
+        },
+        {
+            "name": "Food Trucks",
+            "description": "Mobile vendors serving a variety of cuisines on-the-go."
+        },
+        {
+            "name": "Catering",
+            "description": "Professional food service for events and functions."
+        },
+        {
+            "name": "Vegan and Vegetarian",
+            "description": "Eateries with a focus on plant-based menus."
+        },
+        {
+            "name": "International Cuisine",
+            "description": "Restaurants offering dishes from various global cultures."
+        },
+        {
+            "name": "Coffee Shops",
+            "description": "Venues specializing in coffee and related beverages."
+        },
+        {
+            "name": "Bakeries",
+            "description": "Shops producing and selling baked goods."
+        },
+        {
+            "name": "Ice Cream Parlors",
+            "description": "Stores specializing in frozen desserts, primarily ice cream."
+        },
+        {
+            "name": "Food Delivery Services",
+            "description": "Services that transport meals from restaurants to customers."
+        }
+    ]
+},
+{
+    "name": "Real Estate",
+    "description": "Services and entities related to property acquisition, sale, and management.",
+    "subcategories": [
+        {
+            "name": "Residential Real Estate",
+            "description": "Property designed for individual or family living."
+        },
+        {
+            "name": "Commercial Real Estate",
+            "description": "Property used exclusively for business purposes."
+        },
+        {
+            "name": "Property Management",
+            "description": "Overseeing the day-to-day operations of a property."
+        },
+        {
+            "name": "Real Estate Agents",
+            "description": "Professionals facilitating property sales and purchases."
+        },
+        {
+            "name": "Home Appraisals",
+            "description": "Estimation of a property's market value."
+        },
+        {
+            "name": "Rental Properties",
+            "description": "Properties available for temporary occupancy."
+        },
+        {
+            "name": "Real Estate Investments",
+            "description": "Property assets acquired for potential returns."
+        },
+        {
+            "name": "Vacation Rentals",
+            "description": "Properties rented for short-term vacation stays."
+        },
+        {
+            "name": "Home Inspections",
+            "description": "Assessment of a property's condition before a sale."
+        },
+        {
+            "name": "Mortgage Services",
+            "description": "Financial services related to property loans."
+        },
+        {
+            "name": "Real Estate Development",
+            "description": "Creating new properties or renovating existing ones."
+        }
+    ]
+},
+{
+    "name": "Travel and Vacation",
+    "description": "Services related to travel planning, accommodations, and experiences.",
+    "subcategories": [
+        {
+            "name": "Airline Tickets",
+            "description": "Passes for air travel between destinations."
+        },
+        {
+            "name": "Hotels and Accommodations",
+            "description": "Places providing temporary lodging."
+        },
+        {
+            "name": "Car Rentals",
+            "description": "Services offering cars for temporary usage."
+        },
+        {
+            "name": "Vacation Packages",
+            "description": "Bundled travel deals inclusive of multiple services."
+        },
+        {
+            "name": "Travel Insurance",
+            "description": "Coverage against potential travel-related mishaps."
+        },
+        {
+            "name": "Cruises",
+            "description": "Travel and accommodation on a seafaring vessel."
+        },
+        {
+            "name": "Adventure Travel",
+            "description": "Travel experiences with thrilling activities."
+        },
+        {
+            "name": "Eco-Tourism",
+            "description": "Travel focused on natural environments and sustainability."
+        },
+        {
+            "name": "Safari Tours",
+            "description": "Expeditions to observe wildlife in their natural habitats."
+        },
+        {
+            "name": "Hiking and Trekking",
+            "description": "Walking excursions in nature, often in mountainous regions."
+        },
+        {
+            "name": "Ski Resorts",
+            "description": "Destinations designed for skiing, snowboarding, and winter activities."
+        }
+    ]
+},{
+    "name": "Automotive",
+    "description": "Services and entities related to vehicles and their maintenance.",
+    "subcategories": [
+        {
+            "name": "Car Dealerships",
+            "description": "Businesses selling new or used vehicles."
+        },
+        {
+            "name": "Auto Repairs",
+            "description": "Services that fix and maintain vehicles."
+        },
+        {
+            "name": "Tires and Wheels",
+            "description": "Products and services related to vehicle tires and wheels."
+        },
+        {
+            "name": "Car Rentals",
+            "description": "Services offering vehicles for short-term usage."
+        },
+        {
+            "name": "Auto Detailing",
+            "description": "Vehicle cleaning and finishing services."
+        },
+        {
+            "name": "Car Accessories",
+            "description": "Additional components to enhance vehicle functionality or aesthetics."
+        },
+        {
+            "name": "Oil Change Services",
+            "description": "Routine vehicle maintenance to replace engine oil."
+        },
+        {
+            "name": "Vehicle Inspections",
+            "description": "Assessment of a vehicle's condition and compliance with regulations."
+        },
+        {
+            "name": "Car Wash",
+            "description": "Services that clean vehicles externally and/or internally."
+        },
+        {
+            "name": "Auto Parts Stores",
+            "description": "Retailers selling components for vehicle repair and enhancement."
+        },
+        {
+            "name": "Car Restoration",
+            "description": "Services that rejuvenate old or damaged vehicles."
+        }
+    ]
+},
+{
+    "name": "Logistics and Delivery",
+    "description": "Services related to the transportation and distribution of goods.",
+    "subcategories": [
+        {
+            "name": "Shipping Services",
+            "description": "Delivery of goods via land, sea, or air."
+        },
+        {
+            "name": "Freight Forwarding",
+            "description": "Services managing the movement of goods for companies."
+        },
+        {
+            "name": "Warehousing",
+            "description": "Storage solutions for goods awaiting transport or sale."
+        },
+        {
+            "name": "Courier Services",
+            "description": "Delivery of packages and documents."
+        },
+        {
+            "name": "Last-Mile Delivery",
+            "description": "Transportation of goods from a distribution center to the final consumer."
+        },
+        {
+            "name": "Supply Chain Management",
+            "description": "Oversight of goods' journey from producer to consumer."
+        },
+        {
+            "name": "E-commerce Fulfillment",
+            "description": "Services handling storage and shipping for online retailers."
+        },
+        {
+            "name": "Freight Brokerage",
+            "description": "Companies linking shippers with transportation services."
+        },
+        {
+            "name": "Packaging Services",
+            "description": "Preparing goods for safe transport."
+        },
+        {
+            "name": "Customs Brokerage",
+            "description": "Assistance with clearing goods through customs."
+        },
+        {
+            "name": "Cold Chain Logistics",
+            "description": "Transportation of goods that require temperature control."
+        }
+    ]
+},
+{
+    "name": "Hangout and Recreation",
+    "description": "Places and activities designed for leisure and enjoyment.",
+    "subcategories": [
+        {
+            "name": "Amusement Parks",
+            "description": "Large-scale entertainment venues with rides and attractions."
+        },
+        {
+            "name": "Bowling Alleys",
+            "description": "Facilities for the sport of bowling."
+        },
+        {
+            "name": "Movie Theaters",
+            "description": "Venues for viewing films on the big screen."
+        },
+        {
+            "name": "Mini Golf",
+            "description": "Courses for a miniature version of the sport of golf."
+        },
+        {
+            "name": "Billiards and Pool Halls",
+            "description": "Venues for cue sports like pool and snooker."
+        },
+        {
+            "name": "Arcade Games",
+            "description": "Venues with video games, pinball machines, and other coin-operated games."
+        },
+        {
+            "name": "Trampoline Parks",
+            "description": "Indoor spaces filled with trampolines for recreational jumping."
+        },
+        {
+            "name": "Paintball",
+            "description": "Sport in which players eliminate opponents with dye-filled gelatin capsules."
+        },
+        {
+            "name": "Zoos and Aquariums",
+            "description": "Facilities displaying animals and marine life for public viewing."
+        },
+        {
+            "name": "Botanical Gardens",
+            "description": "Gardens showcasing plants labeled with their botanical names."
+        },
+        {
+            "name": "Water Parks",
+            "description": "Parks featuring water play areas, like slides and lazy rivers."
+        }
+    ]
+},
+{
+    "name": "Pet and Veterinary",
+    "description": "Services and places related to animals and their care.",
+    "subcategories": [
+        {
+            "name": "Dog Grooming",
+            "description": "Services cleaning and styling dogs."
+        },
+        {
+            "name": "Cat Grooming",
+            "description": "Services cleaning and styling cats."
+        },
+        {
+            "name": "Veterinary Clinics",
+            "description": "Medical facilities for animals."
+        },
+        {
+            "name": "Pet Boarding",
+            "description": "Places where pets are housed temporarily."
+        },
+        {
+            "name": "Pet Training",
+            "description": "Services teaching pets certain behaviors."
+        },
+        {
+            "name": "Pet Supplies",
+            "description": "Products for the care and enjoyment of pets."
+        },
+        {
+            "name": "Pet Adoption",
+            "description": "Services connecting animals with new owners."
+        },
+        {
+            "name": "Pet Sitting",
+            "description": "Services taking care of pets in their owner's absence."
+        },
+        {
+            "name": "Aquarium Services",
+            "description": "Maintenance and supply for fish tanks."
+        },
+        {
+            "name": "Horse Riding Lessons",
+            "description": "Training in equestrian skills."
+        },
+        {
+            "name": "Exotic Pet Care",
+            "description": "Services for less common household animals."
+        }
+    ]
+}
+
+]

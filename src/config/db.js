@@ -1,17 +1,14 @@
-const mongoose = require('mongoose');
-const { TEST_DB, DATA_DB } = require('./key');
+import mongoose from 'mongoose';
+import EnvHelper from "./env.helper";
 
-let mongoUrl = null;
+async function connect() {
+  try {
+    await mongoose.connect(EnvHelper.getDatabase())
 
-
-const mongoConnection = () => {
-    if (process.env.NODE_ENV === 'development') {
-        mongoUrl ='mongodb://localhost:27017/ecommerce-api'
-    } else {
-        mongoUrl = TEST_DB;
-    }
-    return mongoose.connect(mongoUrl);
+    logger.info('Database Connected')
+  } catch (error) {
+    logger.error('Error connecting to MongoDB:', error);
+  }
 }
 
-module.exports = mongoConnection;
-
+export default connect;

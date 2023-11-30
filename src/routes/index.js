@@ -1,30 +1,79 @@
-const express = require('express');
-const app = express()
-const bodyParser = require('body-parser');
-const helmet = require('helmet');
-const cors = require('cors');
-const morgan = require('morgan')
+import express from 'express';
+import helmet from 'helmet';
+import responseTime from 'response-time';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+import Logger from '../config/logger';
+import morgan from 'morgan';
+import userAuthRoute from '../apps/auth/routes/userAuthRoute';
+import adminAuthRoute from '../apps/auth/routes/adminAuthRoute';
+import userRoute from '../apps/user/routes/userRoute';
+import mediaRoute from '../apps/media/routes/mediaRoutes';
+import client from 'prom-client';
+import verificationRoute from '../apps/verification/routes/verificationRoute';
 
+const app = express();
 
-const userAuthRoute = require('../routes/userAuth')
-const userRoute = require('../routes/users')
-const productRoute = require('../routes/product')
-const orderRoute = require('../routes/orders')
-const cartRoute = require('../routes/carts')
+const restResponseTimeHistogram = new client.Histogram({
+  name: 'rest_response_time_duration_seconds',
+  help: 'REST API response time in seconds',
+  labelNames: ['method', 'route', 'status_code'],
+});
 
+const databaseResponseTimeHistogram = new client.Histogram({
+  name: 'db_response_time_duration_seconds',
+  help: 'Database response time in seconds',
+  labelNames: ['operation', 'success'],
+});
 
-app.use(morgan("dev"));
+global.logger = Logger.createLogger({ label: 'Parrot Backend' });
+app.use(
+  responseTime((req, res, time) => {
+    const routePath = req.route?.path || req.path;
+    // Capture the route and label the metrics
+    restResponseTimeHistogram.observe(
+      {
+        method: req.method,
+        route: routePath,
+        status_code: res.statusCode,
+      },
+      time * 1000
+    );
+  })
+);
+
+app.use(helmet());
+app.use(cors({}));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(helmet())
-app.use(cors())
+app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use(express.urlencoded({ extended: true }));
+app.use(morgan('combined', { stream: logger.stream }));
 
+app.use(`/healthcheck`, (req, res) => {
+  res.status(200).send('Parrot Backend is online and healthy techies');
+});
 
-app.use('/api/userAuth', userAuthRoute)
-app.use('/api/user', userRoute)
-app.use('/api/product', productRoute)
-app.use('/api/orders', orderRoute)
-app.use('/api/carts', cartRoute)
+app.get('/metrics', async (req, res) => {
+  res.set('Content-Type', client.register.contentType);
+  res.send(await client.register.metrics());
+});
 
-module.exports = app;
+// ## AUTH ROUTES ##
+app.use('/auth', userAuthRoute);
+app.use('/auth', adminAuthRoute);
+
+// ## User ROUTES ##
+app.use('/user', userRoute);
+
+// ## Media ROUTES ##
+app.use('/media', mediaRoute);
+
+// ## Verification ROUTES ##
+app.use('/verification', verificationRoute);
+
+app.get('/', (req, res) => {
+  res.status(200).send('Parrot Backend is online and healthy techies');
+});
+
+export default app;
