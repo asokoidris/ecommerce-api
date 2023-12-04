@@ -57,6 +57,16 @@ export default class ProductRepo {
     }
   }
 
+  static findProductById(productId) {
+    try {
+      return ProductModel.findById(productId);
+    } catch (error) {
+      logger.error(
+        `ProductRepo findProductById database -> error: ${error.message}`
+      );
+      throw error;
+    }
+  }
   /**
    * @description Retrieve a list of all Products in the database.
    * @returns {Promise<Array>} A promise that resolves with an array of all Product objects.

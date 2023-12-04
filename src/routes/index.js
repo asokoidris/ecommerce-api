@@ -9,6 +9,7 @@ import userAuthRoute from '../apps/auth/routes/userAuthRoute';
 import adminAuthRoute from '../apps/auth/routes/adminAuthRoute';
 import userRoute from '../apps/user/routes/userRoute';
 import mediaRoute from '../apps/media/routes/mediaRoutes';
+import categoryAndSubcategoryRoute from '../apps/categoriesAndSubcategories/routes/categoryAndSubcategoryRoute';
 import client from 'prom-client';
 import verificationRoute from '../apps/verification/routes/verificationRoute';
 
@@ -68,6 +69,9 @@ app.use('/user', userRoute);
 
 // ## Media ROUTES ##
 app.use('/media', mediaRoute);
+
+// ## CategoryAndSubcategory ROUTES ##
+app.use('/', categoryAndSubcategoryRoute);
 
 // ## Verification ROUTES ##
 app.use('/verification', verificationRoute);

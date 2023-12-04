@@ -47,40 +47,40 @@ export const USER_STATUS = {
   DELETED: 'Deleted',
 };
 
-const CATEGORY_OR_SUBCATEGORY_STATUS = {
+export const CATEGORY_OR_SUBCATEGORY_STATUS = {
   ACTIVE: 'Active',
   INACTIVE: 'Inactive',
   DISABLED: 'Disabled',
 };
 
-const PRODUCT_STATUS = {
-  ACTIVE: 'Active',
-  INACTIVE: 'Inactive',
-  DISABLED: 'Disabled',
-  DELETED: 'Deleted',
-};
-
-const COMPANY_STATUS = {
+export const PRODUCT_STATUS = {
   ACTIVE: 'Active',
   INACTIVE: 'Inactive',
   DISABLED: 'Disabled',
   DELETED: 'Deleted',
 };
 
-const ADDRESS_STATUS = {
+export const COMPANY_STATUS = {
+  ACTIVE: 'Active',
+  INACTIVE: 'Inactive',
+  DISABLED: 'Disabled',
+  DELETED: 'Deleted',
+};
+
+export const ADDRESS_STATUS = {
   ACTIVE: 'Active',
   DISABLED: 'Disabled',
   DELETED: 'Deleted',
 };
 
-const BANK_STATUS = {
+export const BANK_STATUS = {
   ACTIVE: 'Active',
   DISABLED: 'Disabled',
   DELETED: 'Deleted',
   DEFAULT: 'Default',
 };
 
-const ORDER_STATUS = {
+export const ORDER_STATUS = {
   PENDING: 'Pending',
   CONFIRMED: 'Confirmed',
   SHIPPED: 'Shipped',
@@ -88,14 +88,14 @@ const ORDER_STATUS = {
   CANCELLED: 'Cancelled',
 };
 
-const PAYMENT_METHOD = {
+export const PAYMENT_METHOD = {
   TRANSFER: 'Transfer',
   DEBIT_CARD: 'Debit Card',
   CASH_ON_DELIVERY: 'Cash On Delivery',
   WALLET: 'Wallet',
 };
 
-const PAYMENT_STATUS = {
+export const PAYMENT_STATUS = {
   PAID: 'Paid',
   UNPAID: 'Unpaid',
   PENDING: 'Pending',

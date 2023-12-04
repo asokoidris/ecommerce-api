@@ -1,8 +1,7 @@
-import ProductModel from '../models/product-model.js';
-import CategoryModel from '../models/category-model.js';
-import SubcategoryModel from '../models/subcategory-model.js';
-import ProductSpecificationModel from '../models/product-specification-model.js';
-import CompanyModel from '../models/company-model.js';
+import ProductRepo from '../../../repository/product.js';
+import CategoryAndSubCategoryRepo from '../../../repository/categoryAndSubCategoryRepo copy.js';
+import ProductSpecificationRepo from '../../../repository/productSpecification.js';
+import CompanyRepo from '../../../repository/company.js';
 import { PRODUCT_STATUS } from '../utils/constant/options.js';
 import HelperFunctions from '../utils/helper-functions.js';
 
@@ -30,7 +29,7 @@ export default class ProductService {
       images,
     } = data;
 
-    const productExist = await ProductModel.findOne({
+    const productExist = await ProductRepo.findProductByName({
       owner: user.id || user._id,
       name: HelperFunctions.capitalizeFirstLetter(name),
     });
@@ -41,7 +40,7 @@ export default class ProductService {
         message: 'Product already registered',
       };
 
-    const companyExist = await CompanyModel.findById(company);
+    const companyExist = await CompanyRepo.findCompany(company);
 
     if (!companyExist)
       return {
@@ -49,14 +48,18 @@ export default class ProductService {
         message: 'Company not found',
       };
 
-    const categoryExist = await CategoryModel.findById(categoryId);
+    const categoryExist = await CategoryAndSubCategoryRepo.findCategoryById(
+      categoryId
+    );
     if (!categoryExist)
       return {
         statusCode: 404,
         message: 'Category not found',
       };
 
-    const subcategory = await SubcategoryModel.findById(subcategoryId);
+    const subcategory = await CategoryAndSubCategoryRepo.findSubCategoryById(
+      subcategoryId
+    );
 
     if (!subcategory)
       return {
@@ -64,11 +67,12 @@ export default class ProductService {
         message: 'Subcategory not found',
       };
 
-    const createdSpecification = await ProductSpecificationModel.create(
-      productSpecification
-    );
+    const createdSpecification =
+      await ProductSpecificationRepo.createProductSpecification(
+        productSpecification
+      );
 
-    const newProduct = await ProductModel.create({
+    const newProduct = await ProductRepo.createProduct({
       owner: user.id,
       company,
       name: HelperFunctions.capitalizeFirstLetter(name),
@@ -97,39 +101,39 @@ export default class ProductService {
    * @description function to get all Products
    * @return {Object} Returned object
    */
-  static async getAllProductsService(query) {
-    const { page = 1, limit = 20 } = query;
+  // static async getAllProductsService(query) {
+  //   const { page = 1, limit = 20 } = query;
 
-    const options = {
-      page: parseInt(page, 10) || 1,
-      limit: parseInt(limit, 10) || 20,
-      sort: { createdAt: -1 },
-      populate: [
-        { path: 'productSpecification' },
-        { path: 'company' },
-        { path: 'categoryId' },
-        { path: 'subcategoryId' },
-        { path: 'owner' },
-      ],
-    };
+  //   const options = {
+  //     page: parseInt(page, 10) || 1,
+  //     limit: parseInt(limit, 10) || 20,
+  //     sort: { createdAt: -1 },
+  //     populate: [
+  //       { path: 'productSpecification' },
+  //       { path: 'company' },
+  //       { path: 'categoryId' },
+  //       { path: 'subcategoryId' },
+  //       { path: 'owner' },
+  //     ],
+  //   };
 
-    const allProducts = await ProductModel.paginate(
-      {
-        status: PRODUCT_STATUS.ACTIVE,
-      },
-      options
-    );
+  //   const allProducts = await ProductModel.paginate(
+  //     {
+  //       status: PRODUCT_STATUS.ACTIVE,
+  //     },
+  //     options
+  //   );
 
-    logger.info(
-      `getAllProductsService -> allProducts: ${JSON.stringify(allProducts)}`
-    );
+  //   logger.info(
+  //     `getAllProductsService -> allProducts: ${JSON.stringify(allProducts)}`
+  //   );
 
-    return {
-      statusCode: 200,
-      message: 'All Products retrieved successfully',
-      data: allProducts,
-    };
-  }
+  //   return {
+  //     statusCode: 200,
+  //     message: 'All Products retrieved successfully',
+  //     data: allProducts,
+  //   };
+  // }
 
   /**
    * @description function to get Product by ID
@@ -137,7 +141,7 @@ export default class ProductService {
    * @return {Object} Returned object
    */
   static async getProductByIdService(id) {
-    const product = await ProductModel.findById({
+    const product = await ProductRepo.findProductById({
       _id: id,
       status: PRODUCT_STATUS.ACTIVE,
     })
@@ -170,7 +174,7 @@ export default class ProductService {
    * @return {Object} Returned object
    */
   static async updateProductByIdService(user, id, data) {
-    const product = await ProductModel.findOne({
+    const product = await ProductRepo.findProductById({
       owner: user.id || user._id,
       _id: id,
       status: PRODUCT_STATUS.ACTIVE,
@@ -182,7 +186,7 @@ export default class ProductService {
         message: 'Product not found',
       };
 
-    const productExist = await ProductModel.findOne({
+    const productExist = await ProductRepo.findProductById({
       owner: user.id || user._id,
       name: HelperFunctions.capitalizeFirstLetter(data.name),
     });
@@ -194,7 +198,9 @@ export default class ProductService {
       };
 
     if (data.categoryId) {
-      const categoryExist = await CategoryModel.findById(data.categoryId);
+      const categoryExist = await CategoryAndSubCategoryRepo.findCategoryById(
+        data.categoryId
+      );
       if (!categoryExist)
         return {
           statusCode: 404,
@@ -203,9 +209,10 @@ export default class ProductService {
     }
 
     if (data.subcategoryId) {
-      const subcategoryExist = await SubcategoryModel.findById(
-        data.subcategoryId
-      );
+      const subcategoryExist =
+        await SubcategoryACategoryAndSubCategoryRepo.findSubCategoryById(
+          data.subcategoryId
+        );
       if (!subcategoryExist)
         return {
           statusCode: 404,
@@ -218,11 +225,9 @@ export default class ProductService {
       typeof product.productSpecification === 'object'
     ) {
       const updateProductSpecification =
-        await ProductSpecificationModel.findOneAndUpdate(
-          { _id: product.productSpecification },
-          data.productSpecification,
-          { new: true }
-        );
+        await ProductSpecificationRepo.updateProductSpecification(id, {
+          ...data,
+        });
 
       logger.info(
         `updateProductByIdService -> updatedProductSpecification: ${JSON.stringify(
@@ -234,13 +239,9 @@ export default class ProductService {
     //NOTE: We don't need to update the id
     data.productSpecification = undefined;
 
-    const updatedProduct = await ProductModel.findByIdAndUpdate(
-      { _id: id },
-      {
-        ...data,
-      },
-      { new: true }
-    );
+    const updatedProduct = await ProductRepo.updateProduct(id, {
+      ...data,
+    });
 
     logger.info(
       `updateProductByIdService -> updatedProduct: ${JSON.stringify(
@@ -262,7 +263,7 @@ export default class ProductService {
    * @return {Object} Returned object
    */
   static async deleteProductByIdService(user, id) {
-    const product = await ProductModel.findOne({
+    const product = await ProductRepo.findProductById({
       owner: user.id || user._id,
       _id: id,
       status: PRODUCT_STATUS.ACTIVE,
@@ -274,11 +275,9 @@ export default class ProductService {
         message: 'Product not found or already deleted',
       };
 
-    const deletedProduct = await ProductModel.findByIdAndUpdate(
-      { _id: id },
-      { status: PRODUCT_STATUS.DELETED },
-      { new: true }
-    );
+    const deletedProduct = await ProductRepo.updateProduct(id, {
+      status: PRODUCT_STATUS.DELETED,
+    });
 
     logger.info(
       `deleteProductByIdService -> deletedProduct: ${JSON.stringify(
@@ -298,7 +297,7 @@ export default class ProductService {
    * @return {Object} Returned object
    */
   static async getProductsByCategoryService(categoryId) {
-    const products = await ProductModel.find({
+    const products = await ProductRepo.getAllProducts({
       categoryId,
       status: PRODUCT_STATUS.ACTIVE,
     })
@@ -325,7 +324,7 @@ export default class ProductService {
    * @return {Object} Returned object
    */
   static async getProductsBySubCategoryService(subcategoryId) {
-    const products = await ProductModel.find({
+    const products = await ProductRepo.getAllProducts({
       subcategoryId,
       status: PRODUCT_STATUS.ACTIVE,
     })
