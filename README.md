@@ -22,7 +22,6 @@ Copy code
 # Example .env file for eCommerce API
 PORT=3000
 MONGODB_URI=mongodb://localhost:27017/ecommerce
-SECRET_KEY=mysecretkey
 Update the MongoDB URI with your actual database connection details.
 
 Running The Project 🏃‍♀️
