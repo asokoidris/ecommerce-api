@@ -27,7 +27,7 @@ const databaseResponseTimeHistogram = new client.Histogram({
   labelNames: ['operation', 'success'],
 });
 
-global.logger = Logger.createLogger({ label: 'Parrot Backend' });
+global.logger = Logger.createLogger({ label: 'smartzee Backend' });
 app.use(
   responseTime((req, res, time) => {
     const routePath = req.route?.path || req.path;
@@ -52,7 +52,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('combined', { stream: logger.stream }));
 
 app.use(`/healthcheck`, (req, res) => {
-  res.status(200).send('Parrot Backend is online and healthy techies');
+  res.status(200).send('smartzee Backend is online and healthy techies');
 });
 
 app.get('/metrics', async (req, res) => {
@@ -77,7 +77,7 @@ app.use('/', categoryAndSubcategoryRoute);
 app.use('/verification', verificationRoute);
 
 app.get('/', (req, res) => {
-  res.status(200).send('Parrot Backend is online and healthy techies');
+  res.status(200).send('smartzee Backend is online and healthy techies');
 });
 
 export default app;

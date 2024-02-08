@@ -9,7 +9,7 @@ export default ({ name, body, url, cta }) => `
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <title>Zacrac</title>
+  <title>smartzee</title>
   <style type="text/css">
   html {
     width: 100%;
@@ -106,7 +106,7 @@ export default ({ name, body, url, cta }) => `
     <td class="full_width" align="center" style="font-family: ‘Open Sans’, Arial, sans-serif;" width="100%" bgcolor="#fff">
         <div class="" style="width: 550px; text-align: left; margin: 50px 0 0 0;">
           <p style="color: #616564; font-size: 16px; margin: 5px 0;">
-            If you need help with anything, mail us at <a href="mailto:support@zacrac.com" style="color: #10618B;">support@zacrac.com</a>
+            If you need help with anything, mail us at <a href="mailto:support@smartzee.com" style="color: #10618B;">support@smartzee.com</a>
           </p>
         </div>
     </td>
@@ -118,7 +118,7 @@ export default ({ name, body, url, cta }) => `
             Cheers,
           </p>
           <p style="color: #10618B; font-size: 16px; margin: 5px 0;">
-            The Zacrac Team.
+            The smartzee Team.
           </p>
         </div>
     </td>
@@ -166,10 +166,10 @@ export default ({ name, body, url, cta }) => `
   <tr>
     <td class="full_width" align="center" style="font-family: ‘Open Sans’, Arial, sans-serif;" width="100%" bgcolor="#fff">
         <div style="width: 550px; text-align: center; margin: 52px 0 0 0;">
-          <a href="https://www.linkedin.com/company/zacrachq/" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/Elb2BSF.png" alt="linkedin"></a>
-          <a href="https://facebook.com/zacrachq" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/5ijDuLM.png" alt="facebook"></a>
-          <a href="https://www.instagram.com/zacrachq/" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/74YAABc.png" alt="instagram"></a>
-          <a href="https://twitter.com/ZacracnHQ" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/xQp3Kpm.png" alt="twitter"></a>
+          <a href="https://www.linkedin.com/company/smartzeehq/" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/Elb2BSF.png" alt="linkedin"></a>
+          <a href="https://facebook.com/smartzeehq" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/5ijDuLM.png" alt="facebook"></a>
+          <a href="https://www.instagram.com/smartzeehq/" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/74YAABc.png" alt="instagram"></a>
+          <a href="https://twitter.com/smartzeenHQ" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/xQp3Kpm.png" alt="twitter"></a>
         </div>
     </td>
   </tr>
@@ -185,9 +185,9 @@ export default ({ name, body, url, cta }) => `
             You are receiving this message because you signed up on
           </p>
           <p style="color: #616564; font-size: 16px; margin: 5px 0; text-align: center;">
-            Zacrac. For more information about how we process
+            smartzee. For more information about how we process
           </p><p style="color: #616564; font-size: 16px; margin: 5px 0; text-align: center;">
-            data, please see our <a href="https://www.zacrac.com/policy" style="color: #10618B; text-decoration: underline;">Privacy Policy</a>
+            data, please see our <a href="https://www.smartzee.com/policy" style="color: #10618B; text-decoration: underline;">Privacy Policy</a>
           </p>
           <p style="color: #616564; font-size: 16px; margin: 25px 0; text-align: center;">
             <a href="#unsubscribe-link-goes-here" style="color: #10618B; text-decoration: underline;">Unsubscribe</a>

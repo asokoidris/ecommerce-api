@@ -5,7 +5,7 @@ const Termii = {
   sendMessage(data) {
     const params = {
       to: data.phoneNumber,
-      from: 'zacrac',
+      from: 'smartzee',
       sms: data.message,
       type: 'plain',
       api_key: TERMII_API_KEY,

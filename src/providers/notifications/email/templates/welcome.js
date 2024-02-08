@@ -9,7 +9,7 @@
 //   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 //   <link rel="stylesheet" href="index.css">
 //   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-//   <title>Welcome to Zacrac</title>
+//   <title>Welcome to smartzee</title>
 //   <style type="text/css">
 //     html {
 //       width: 100%;
@@ -94,7 +94,7 @@
 //    <tr>
 //     <td class="full_width" align="center" style="font-family: ‘Open Sans’, Arial, sans-serif;" width="100%" bgcolor="#fff">
 //         <div class="" style="width: 550px; text-align: left; margin: 20px 0 0 0;">
-//           <p style="color: #616564; font-size: 16px; margin: 5px 0;">Welcome to Zacrac,</p>
+//           <p style="color: #616564; font-size: 16px; margin: 5px 0;">Welcome to smartzee,</p>
 //         </div>
 //     </td>
 //   </tr>
@@ -112,7 +112,7 @@
 //         <div class="" style="width: 550px; text-align: left; margin: 14px 0 0 0;">
 //           <p style="color: #616564; font-size: 16px; margin: 5px 0;">
 //             You don't have the luxury of owning all the data and market research you need but you want to do more?
-//             Zacrac's all about bridging the accessibility gap and connecting you to your needs.
+//             smartzee's all about bridging the accessibility gap and connecting you to your needs.
 //           </p>
 //         </div>
 //     </td>
@@ -121,7 +121,7 @@
 //     <td class="full_width" align="center" style="font-family: ‘Open Sans’, Arial, sans-serif;" width="100%" bgcolor="#fff">
 //         <div class="" style="width: 550px; text-align: left; margin: 14px 0 0 0;">
 //           <p style="color: #616564; font-size: 16px; margin: 5px 0;">
-//             Now, let's get right into it so you can make the most of your Zacrac account!
+//             Now, let's get right into it so you can make the most of your smartzee account!
 //           </p>
 //         </div>
 //     </td>
@@ -157,7 +157,7 @@
 //     <td class="full_width" align="center" style="font-family: ‘Open Sans’, Arial, sans-serif;" width="100%" bgcolor="#fff">
 //         <div class="" style="width: 550px; text-align: left; margin: 14px 0 0 0;">
 //           <p style="color: #616564; font-size: 16px; margin: 5px 0;">
-//             If you need help with anything, mail us at <a href="mailto:support@zacrac.com" style="color: #10618B;">support@zacrac.com</a>
+//             If you need help with anything, mail us at <a href="mailto:support@smartzee.com" style="color: #10618B;">support@smartzee.com</a>
 //           </p>
 //         </div>
 //     </td>
@@ -169,7 +169,7 @@
 //             Cheers,
 //           </p>
 //           <p style="color: #10618B; font-size: 16px; margin: 5px 0;">
-//             The Zacrac Team.
+//             The smartzee Team.
 //           </p>
 //         </div>
 //     </td>
@@ -221,10 +221,10 @@
 //   <tr>
 //     <td class="full_width" align="center" style="font-family: ‘Open Sans’, Arial, sans-serif;" width="100%" bgcolor="#fff">
 //         <div class="" style="width: 550px; text-align: center; margin: 52px 0 0 0;">
-//           <a href="https://www.linkedin.com/company/zacracnhq/" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/Elb2BSF.png" alt="linkedin"></a>
-//           <a href="https://facebook.com/zacrachq" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/5ijDuLM.png" alt="facebook"></a>
-//           <a href="https://www.instagram.com/zacrachq/" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/74YAABc.png" alt="instagram"></a>
-//           <a href="https://twitter.com/ZacracHQ" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/xQp3Kpm.png" alt="twitter"></a>
+//           <a href="https://www.linkedin.com/company/smartzeenhq/" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/Elb2BSF.png" alt="linkedin"></a>
+//           <a href="https://facebook.com/smartzeehq" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/5ijDuLM.png" alt="facebook"></a>
+//           <a href="https://www.instagram.com/smartzeehq/" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/74YAABc.png" alt="instagram"></a>
+//           <a href="https://twitter.com/smartzeeHQ" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/xQp3Kpm.png" alt="twitter"></a>
 //         </div>
 //     </td>
 //   </tr>
@@ -250,7 +250,7 @@
 //           <p style="color: #616564; font-size: 16px; margin: 5px 0; text-align: center;">
 //             TempOwn. For more information about how we process
 //           </p><p style="color: #616564; font-size: 16px; margin: 5px 0; text-align: center;">
-//             data, please see our <a href="https://www.zacrac.com/policy" style="color: #10618B; text-decoration: underline;">Privacy Policy</a>
+//             data, please see our <a href="https://www.smartzee.com/policy" style="color: #10618B; text-decoration: underline;">Privacy Policy</a>
 //           </p>
 //           <p style="color: #616564; font-size: 16px; margin: 25px 0; text-align: center;">
 //             <a href="#unsubscribe-link-goes-here" style="color: #10618B; text-decoration: underline;">Unsubscribe</a>
@@ -273,7 +273,7 @@ export default ({ name, body, url, cta }) => `
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <title>Welcome to Zacrac</title>
+  <title>Welcome to smartzee</title>
   <style type="text/css">
     html {
       width: 100%;
@@ -379,7 +379,7 @@ export default ({ name, body, url, cta }) => `
     <td class="full_width" align="center" style="font-family: ‘Open Sans’, Arial, sans-serif;" width="100%" bgcolor="#fff">
         <div class="" style="width: 550px; text-align: left; margin: 14px 0 0 0;">
           <p style="color: #616564; font-size: 16px; margin: 5px 0;">
-            At Zacrac, We provide Market Research & Business intelligence for companies looking to obtain insights and drive growth. Authentic data, from the right sources, plus analytics, equals smarter decisions.
+            At smartzee, We provide Market Research & Business intelligence for companies looking to obtain insights and drive growth. Authentic data, from the right sources, plus analytics, equals smarter decisions.
           </p>
         </div>
     </td>
@@ -410,7 +410,7 @@ export default ({ name, body, url, cta }) => `
     <td class="full_width" align="center" style="font-family: ‘Open Sans’, Arial, sans-serif;" width="100%" bgcolor="#fff">
         <div class="" style="width: 550px; text-align: left; margin: 14px 0 0 0;">
           <p style="color: #616564; font-size: 16px; margin: 5px 0;">
-            Team Zacrac
+            Team smartzee
           </p>
         </div>
     </td>
@@ -462,10 +462,10 @@ export default ({ name, body, url, cta }) => `
   <tr>
     <td class="full_width" align="center" style="font-family: ‘Open Sans’, Arial, sans-serif;" width="100%" bgcolor="#fff">
         <div class="" style="width: 550px; text-align: center; margin: 52px 0 0 0;">
-          <a href="https://www.linkedin.com/company/zacracnhq/" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/Elb2BSF.png" alt="linkedin"></a>
-          <a href="https://facebook.com/zacrachq" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/5ijDuLM.png" alt="facebook"></a>
-          <a href="https://www.instagram.com/zacrachq/" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/74YAABc.png" alt="instagram"></a>
-          <a href="https://twitter.com/ZacracHQ" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/xQp3Kpm.png" alt="twitter"></a>
+          <a href="https://www.linkedin.com/company/smartzeenhq/" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/Elb2BSF.png" alt="linkedin"></a>
+          <a href="https://facebook.com/smartzeehq" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/5ijDuLM.png" alt="facebook"></a>
+          <a href="https://www.instagram.com/smartzeehq/" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/74YAABc.png" alt="instagram"></a>
+          <a href="https://twitter.com/smartzeeHQ" class="sm"><img style="width: 20px; height: 20px; margin: 0 20px;" src="https://i.imgur.com/xQp3Kpm.png" alt="twitter"></a>
         </div>
     </td>
   </tr>
@@ -478,7 +478,7 @@ export default ({ name, body, url, cta }) => `
           <img src="https://i.imgur.com/8PA4SaA.png" alt="" style="display: block; width: 100px; height: 100px; margin: 0 auto;">          
         </div>
         <p style="color: #616564; font-size: 16px; margin: 15px 0;">
-          <a href="https://www.linkedin.com/" style="color: #08A05C;"></a> from Zacrac
+          <a href="https://www.linkedin.com/" style="color: #08A05C;"></a> from smartzee
         </p>
     </td>
   </tr>
@@ -486,7 +486,7 @@ export default ({ name, body, url, cta }) => `
     <td class="full_width" align="center" style="font-family: ‘Open Sans’, Arial, sans-serif;" width="100%" bgcolor="#fff">
         <div class="" style="width: 550px; text-align: center; margin: 52px 0 0 0;">
           <p style="color: #616564; font-size: 16px; margin: 5px 0; text-align: center;">
-           You are receiving this message because you signed up on TempOwn. For more information about how we process data, please see our [Privacy Policy](https://www.zacrac.com/policy).
+           You are receiving this message because you signed up on TempOwn. For more information about how we process data, please see our [Privacy Policy](https://www.smartzee.com/policy).
 
           </p>
           <p style="color: #616564; font-size: 16px; margin: 25px 0; text-align: center;">

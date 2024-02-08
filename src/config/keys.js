@@ -3,7 +3,7 @@ dotenv.config();
 
 const keys = {
   DOMAIN: process.env.DOMAIN || `http://localhost:${process.env.PORT || 8080}`,
-  CLIENT_URL: process.env.CLIENT_URL || 'https://parrot.cx/set-password',
+  CLIENT_URL: process.env.CLIENT_URL || 'https://smartzee.cx/set-password',
   PORT: process.env.PORT || 8080,
   NODE_ENV: process.env.NODE_ENV || 'development',
   BCRYPT: process.env.BCRYPT || 10,
@@ -28,13 +28,13 @@ const keys = {
   },
   SUPER_ADMIN: {
     ID: process.env.SUPER_ADMIN_ID || 'SuperAdmin',
-    EMAIL: process.env.SUPER_ADMIN_EMAIL || 'zacrac@gmail.com',
+    EMAIL: process.env.SUPER_ADMIN_EMAIL || 'smartzee@gmail.com',
     PHONE: process.env.SUPER_ADMIN_PHONE || '08012345678',
     PASSWORD: process.env.SUPER_ADMIN_PASSWORD || 'password',
     ROLE: process.env.SUPER_ADMIN_ROLE || 'SuperAdmin',
   },
   CLIENT: {
-    BASE_URL: process.env.CLIENT_BASE_Url || 'https://zacrac.com',
+    BASE_URL: process.env.CLIENT_BASE_Url || 'https://smartzee.com',
     SET_PASSWORD_URL: process.env.SET_PASSWORD_URL || 'set-password',
     VERIFICATION_URL: process.env.VERIFICATION_URL || 'verify',
     CHANGE_PASSWORD_URL: process.env.CHANGE_PASSWORD_URL || 'change-password',
@@ -54,7 +54,7 @@ const keys = {
       ACCESS_KEY_ID: process.env.AWS_ACCESS_KEY_ID || 'key',
       SECRET_ACCESS_KEY: process.env.AWS_SECRET_ACCESS_KEY || 'secret',
       REGION: process.env.AWS_REGION || 'us-east-2',
-      BUCKET_NAME: process.env.AWS_BUCKET_NAME || 'zacrac',
+      BUCKET_NAME: process.env.AWS_BUCKET_NAME || 'smartzee',
     },
   },
   EXTERNAL_API: {
@@ -70,7 +70,7 @@ const keys = {
         PORT: process.env.MAILTRAP_PORT || 2525,
         USERNAME: process.env.MAILTRAP_USERNAME || '87acbe8105d8ef',
         PASSWORD: process.env.MAILTRAP_PASSWORD || '3b0564dd285852',
-        SENDER: process.env.MAILTRAP_SENDER || 'hello@zacrac.com',
+        SENDER: process.env.MAILTRAP_SENDER || 'hello@smartzee.com',
       },
       SEND_PULSE: {
         ID: process.env.SEND_PULSE_HOST_ID,
@@ -82,8 +82,8 @@ const keys = {
         SEND_EMAIL_URL:
           process.env.SEND_PULSE_SEND_EMAIL_URL ||
           'https://api.sendpulse.com/smtp/emails',
-        FROM: process.env.SEND_PULSE_FROM || 'hello@zacrac.com',
-        FROM_NAME: process.env.SEND_PULSE_FROM_NAME || 'Zacrac',
+        FROM: process.env.SEND_PULSE_FROM || 'hello@smartzee.com',
+        FROM_NAME: process.env.SEND_PULSE_FROM_NAME || 'smartzee',
       },
     },
     SMS: {
@@ -91,17 +91,17 @@ const keys = {
         ENDPOINT:
           process.env.TERMII_ENDPOINT || 'https://termii.com/api/sms/send',
         API_KEY: process.env.TERMII_API_KEY,
-        SENDER_ID: process.env.TERMII_SENDER_ID || 'Zacrac',
-        FROM: process.env.TERMII_FROM || 'Zacrac',
+        SENDER_ID: process.env.TERMII_SENDER_ID || 'smartzee',
+        FROM: process.env.TERMII_FROM || 'smartzee',
       },
     },
   },
   FORM: {
     CONTACT_AND_ENQUIRES_REDIRECT_EMAIL:
       process.env.CONTACT_AND_ENQUIRES_FORM_REDIRECT_MAIL ||
-      'enquiries@zacrac.com',
+      'enquiries@smartzee.com',
     PARTNERSHIP_REDIRECT_MAIL:
-      process.env.PARTNERSHIP_FORM_REDIRECT_EMAIL || 'partnership@zacrac.com',
+      process.env.PARTNERSHIP_FORM_REDIRECT_EMAIL || 'partnership@smartzee.com',
   },
 };
 
